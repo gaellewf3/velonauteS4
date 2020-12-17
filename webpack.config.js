@@ -1,4 +1,5 @@
 var Encore = require('@symfony/webpack-encore');
+// var CopyWebpackPlugin = require('copy-webpack-plugin'); // this line tell to webpack to use the plugin
 
 // Manually configure the runtime environment if not already configured yet by the "encore" command.
 // It's useful when you use tools that rely on webpack.config.js file.
@@ -70,6 +71,23 @@ Encore
 
     // uncomment if you're having problems with a jQuery plugin
     //.autoProvidejQuery()
+
+    // .addPlugin(new CopyWebpackPlugin([
+    //     { from: './assets/images', to: 'images' }
+    // ]))
+
+    .copyFiles({   
+        from: './assets/images',
+
+        // optional target path, relative to the output dir
+        // to: 'images/[path][name].[ext]',
+
+        // if versioning is enabled, add the file hash too
+        // to: 'images/[path][name].[hash:8].[ext]',
+
+        // only copy files matching this pattern
+        // pattern: /\.(png|jpg|jpeg)$/
+    })
 ;
 
 module.exports = Encore.getWebpackConfig();

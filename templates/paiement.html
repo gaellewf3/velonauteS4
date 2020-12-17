@@ -1,0 +1,184 @@
+<!DOCTYPE html>
+<html lang="fr">
+    <head>
+        <title>Page Paiement</title> 
+        <meta charset="utf-8">
+        <meta name="author" content="Velonaute-Team">
+        <meta name= "description" content="Le meilleur endroit pour louer votre vélo !">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <link rel="stylesheet" type="text/css" href="css/style.css">
+        <link href="https://fonts.googleapis.com/css2?family=Sacramento&display=swap" rel="stylesheet">
+        <link href="https://fonts.googleapis.com/css2?family=Nothing+You+Could+Do&display=swap" rel="stylesheet">
+        <script src="https://kit.fontawesome.com/3c7632cea0.js" crossorigin="anonymous"></script>    
+    </head>
+
+    <body>
+                <!------------------------- HEADER -------------------------------->
+        <header>
+            <div id="logo">
+                <a href="index.html">
+                <img src="img/logo-officiel.png" alt="logo de site">
+                </a>
+                <h1>Velonaute</h1>
+            </div>
+            <nav>
+                <div id="rechercheConnexion">
+                    <div id="recherche">
+                        <input id="input" type="text" name="Recherche" placeholder="Recherche">
+                        <i class="fas fa-search"></i>
+                        <a href="#" id="connexion">Connexion</a>
+                    </div>
+                </div>
+                <div>
+                    <a href="destinations.html">Destinations</a>
+                    <a href="thematiques.html">Thématiques</a>
+                </div>
+            </nav>
+            <div class="clear"></div>
+            <div id="burger">
+                <i class="fas fa-bars" ></i>
+            </div>
+            <div id="burgerMenu">
+                <a href="#">Connexion</a> 
+                <a href="destinations.html">Destinations</a>
+                <a href="thematiques.html">Thématiques</a>        
+                <a href="#">Contact</a>    
+            </div>
+        </header>
+
+    <div id="containerPaiement">
+        <div class="resa">
+
+            <h3 class="titre">Ma réservation</h3>
+            <div>
+                <img src="img/paiement/pexels-dorothy-castillo-2270328.jpg" alt="cycliste à la montagne"
+                    class="imagePaiement">
+            </div>
+            <h2 id="totalVelonaute">Montant total......150€</h2>
+
+
+        </div>
+
+        <hr>
+
+        <div id="paiement">
+            <h3>Votre paiement</h3>
+
+            <!-- ***************************CARD DETAILS formulaire*********************************************** -->
+
+            <form class="formulairePaiement">
+
+                <label class="typeCarte">Types de paiement:</label><br>
+                <div id="moyensPaiement">
+
+                    <p>
+                        <input type="radio" id="card" name="carte" value="carte bleue" checked="checked">
+                        <label for="carteBleue"> Carte bleue</label>
+                        <i class="fab fa-cc-visa"></i>
+                    </p>
+                    <p>
+                        <input type="radio" id="card" name="carte" value="Mastercard">
+                        <label for="mastercard"> Mastercard</label>
+                        <i class="fab fa-cc-mastercard"></i>
+                    </p>
+                    <p>
+                        <input type="radio" id="paypal" name="carte" value="paypal">
+                        <label for="paypal"> Paypal</label>
+                        <i class="fab fa-cc-paypal"></i>
+                    </p>
+                </div>
+
+
+                <label for="titulaireCarte">Nom du titulaire de la carte</label>
+                <input type="text" id="titulaireCarte" name="titulaireCarte" required><br>
+
+                <label for="numeroCarte">Numéro de carte</label>
+                <input type="number" id="numeroCarte" name="numeroCarte" minlength="16" maxlength="16" required><br>
+
+
+                <div class="tooltip">
+                    <label for="securite=">Code sécurité</label>
+                    <span class="tooltiptext"> Il est constitué des 3 chiffres inscrits au dos de votre carte</span>
+                </div>
+                <input id=securite name="securite" type="number" max="999" required><br>
+
+
+                <label for="moisExpiration">Date d'expiration</label>
+                <input type="text" class="date" name="moisExpiration" minlength="2" maxlength="2">
+                <span>/</span>
+                <input type="text" class="date" name="anneeExpiration" minlength="4" maxlength="4">
+                <br>
+
+
+                <label for="pays">Choisir son pays</label>
+                <select>
+                    <option value="France">France</option>
+                    <option value="Allemagne">Allemagne</option>
+                    <option value="Pays-Bas">Pays-Bas</option>
+                    <option value="Royaume-Uni">Royaume-Uni</option>
+                    <option value="Espagne">Espagne</option><br>
+                </select><br>
+                <div id="bouton">
+                    <button type="submit" id="boutonPaiement">Valider le paiement</button>
+                </div>
+
+                <!-- *******************************modal paiement reussi confirmation avec email*************************** -->
+
+                <div id="myModal" class="modal">
+                    <div class="modal-content">
+                        <a href="#" id="close">X</a>
+
+                        <p>BRAVO ! votre réservation a bien été effectuée ! Vous avez reçu un mail de confirmation.</p>
+                    </div>
+                </div>
+
+                <!-- ******************************message d'erreur en cas de mauvais numéro de carte ************************ -->
+                <div id="erreur">Le numéro de carte saisi n'est pas valide !</div>
+
+            </form>
+
+        </div>
+
+    </div>
+    <!--------------- Footer -------------------->
+
+    <footer>
+        <section id="infosFooter">
+            <div>
+                <p><a id="buttoncontact" href="#contact">Contactez-nous</a></p>
+                <p><a href="faq.html">FAQ</a></p>
+                <p><a href="mentions.html">Mentions légales</a></p>
+            </div>
+            <div id="adresse">
+                <h3>Adresse</h3>
+                <p>8 rue de Rivoli 75004 Paris</p>
+                <a class="reseaux" href="https://fr-fr.facebook.com/" target="_blank"><i
+                        class="fab fa-facebook-f"></i></a>
+                <a class="reseaux" href="https://www.instagram.com/?hl=fr/" target="_blank"><i
+                        class="fab fa-instagram"></i></a>
+                <a class="reseaux" href="https://twitter.com/?lang=fr" target="_blank"><i
+                        class="fab fa-twitter-square"></i></a>
+            </div>
+        </section>
+        <section id="contact">
+            <div class="forum">
+                <i id="close" class='fas fa-times'></i>
+                <h2 class="titre">Contactez-nous</h2>
+                <form>
+                    <p><input type="text" name="your-name" size="40" placeholder="Votre prénom, nom"></p>
+                    <p><input type="email" name="your-mail" size="40" placeholder="Votre e-mail"></p>
+                    <p><textarea name="your-message" cols="40" rows="10" placeholder="Votre message"></textarea></p>
+                    <p><input type="submit" value="Envoyer"></p>
+                </form>
+            </div>
+        </section>
+        <section id="copyright">
+            <p>Copyright © 2020 - Tous droits réservés</p>
+        </section>
+    </footer>
+
+    <script src="js/paiement.js"></script>
+
+</body>
+
+</html>

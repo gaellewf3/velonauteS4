@@ -1,0 +1,1966 @@
+/**************************************************** PAGE GENERAL ***********************************************************/
+* {
+	margin: 0;
+	padding: 0;
+}
+header a {
+    text-decoration: none;
+}
+h1 {
+    color: #ffffff;
+    font-family: 'Sacramento';
+    font-size: 38px;
+    padding: 10px 0 0 0;
+}
+
+h2, h3 {
+	color: #61af76;
+	padding: 10px;
+}
+
+.container {
+	width: 80%;
+	margin: auto;
+}
+
+h2 {
+	text-align: center;
+	padding: 80px;
+}
+
+h3 {
+	color: #61af76;
+	padding: 10px 0;
+}
+
+h4 {
+    color: #61af76;
+    font-size: 20px;
+    padding: 5px;
+}
+
+.clear {
+	clear: both;
+}
+
+body {  
+	font-family: sans-serif;
+	}
+
+
+/**************************************************** PAGE ACCUEIL *************************************************************/
+
+/*HEADER*/
+
+header {
+    width: 100%;
+    background-color: #0E672C;
+    align-items: center;
+    position: fixed;
+    top: 0;
+    left: 0;
+    padding: 10px;
+    z-index: 1;
+}
+
+header img {
+    width: 65px;
+    height: 65px;
+    padding: 0 30px 0 0;
+}
+
+header nav {
+    float: right;
+    padding: 0 50px 0 0;
+}
+
+header nav div {
+    margin: 5px 0;
+}
+
+header nav a {
+    color: #ffffff;
+    font-size: 18px;
+    text-decoration: none;
+    margin: 10px 10px 0 0;
+    text-align: end;
+}
+
+header nav a:hover {
+    color: #61af76;
+}
+
+#logo {
+    float: left;
+    display: flex;
+}
+
+#connexion {
+    padding: 5px;
+    color: #000000;
+    background-color: #eee;
+    font-size: 14px;
+    border-radius: 5px;
+    margin: 0 0 0 20px;
+}
+
+#connexion:hover {
+    color: #ffffff;
+    background-color: #61af76;
+}
+
+#rechercheConnexion{
+    display: flex;
+}
+
+#recherche{
+    display: flex;
+    background-color: white;
+    align-items: center;
+    width: 150px;
+    padding:10px;
+    height: 10px;
+    border-radius: 20px;
+}
+
+#recherche #input{
+    width: 110px;
+    border: none;
+    font-size: 14px;
+    padding-left: 5px;
+}
+
+#recherche i{
+    background-color: white;
+    padding:4px;
+    border-radius: 12px;
+    margin-left: 18px;
+    color: #0E672C;
+}
+
+#recherche i:hover {
+    background-color: #0E672C;
+    color: white;
+}
+
+/*BURGER*/
+
+#burgerMenu {
+    background-color: #ffffff;
+    width: 100%;
+    position: absolute;
+    top: 55px;
+    left: 0;
+    display: none;
+}
+
+#burgerMenu a {
+    color: #61af76;
+    border-bottom: 2px solid #eee;
+    text-decoration: none;
+    display: block;
+    padding: 12px;
+    font-weight: bold;
+}
+
+#burger {
+    display: none;
+    color: #ffffff;
+    background-color: transparent;
+    border: 1px solid #dddddb;
+    width: 40px;
+    border-radius: 5px;
+    padding: 8px;
+    text-align: center;
+    align-items: center;
+    position: absolute;
+    top: 15px;
+    right: 35px;
+    cursor: pointer;
+}
+
+/*COOKIES*/
+
+#cookies {
+    width: 100%;
+    background-color: rgba(87, 87,87, 0.9);
+    position: fixed;
+    top: 0px;
+    left: 0px;
+    z-index: 1;
+}
+
+#cookies p {
+    color: #ffffff;
+    text-align: center;
+    margin: 50px auto;
+}
+
+#cookies a {
+    color: #ffffff;
+    display: flex;
+    width: 100px;
+    margin: auto;
+    padding: 0 0 20px 0;
+    justify-content: center;
+}
+
+
+/*Destinations / Thématiques*/
+
+#options{
+    width: 100%;
+    height: 600px;
+    background-image: url(../img/nature-velo-750.jpg);
+    background-repeat: no-repeat;
+    background-size: cover; 
+    background-attachment: fixed;
+    margin: 70px 0 0 0;
+    position: relative;
+}
+
+#options p {
+    font-size: 34px;
+    font-family: 'Nothing You Could Do';
+    font-weight: bold;
+    text-align: center;
+    color: #0E672C;
+    padding: 80px 0 0 330px;
+}
+
+#optionscontener{
+    padding: 120px 0 0 0;
+    margin: auto;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+
+#optionscontener a{
+    color: #0E672C;
+    background-color: rgba(255,255,255,0.8);
+    font-size: 25px;
+    text-decoration: none;
+    text-align: center;
+    border-radius: 5px;
+    padding: 50px;
+    margin: 70px;
+}
+
+#optionscontener a:hover{
+    color: #ffffff;
+    background-color: rgba(14, 103, 44, 0.7);
+}
+
+/* Description */
+
+#presentation {
+    color: #0E672C;
+    font-size: 22px;
+    text-align: center;
+    margin: 60px auto;
+}
+
+/* Valeurs ajoutées */
+
+#nosBonus {
+    display: flex;
+    flex-wrap: wrap;
+    margin: 0 auto 100px auto;
+    width: 80%;
+}
+
+.bonus {
+    width: 30%;
+    color: #0E672C;
+    font-size: 22px;
+    text-align: center;
+    padding: 40px 10px;
+    margin: auto;
+}
+
+.bonus i {
+    font-size: 60px;
+}
+
+.bonus p {
+    padding: 35px 0 0 0;
+}
+
+.titreBonus {
+    font-size: 30px;
+    font-weight: bold;
+    color: #61af76;
+}
+
+/* Bouton haut de page */
+
+#up {
+    display: block;
+    text-align: end;
+    padding: 15px;
+}
+
+#up a {
+    color: #0E672C;
+    font-size: 35px;
+}
+
+/***** FOOTER *****/
+
+footer {
+    width: 100%;
+    background-color: #0E672C;
+    text-align: center;
+}
+
+footer #infosFooter {
+    background-color: #5FAB73;
+    display: flex;
+    width: 100%;
+}
+
+#infosFooter div{
+    width: 50%;
+    padding: 20px 0 20px 0;
+}
+
+#infosFooter a {
+    color: #ffffff;
+    font-size: 20px;
+    text-decoration: none;
+}
+
+#infosFooter a:hover {
+    color: #0E672C;
+}
+
+#infosFooter p {
+    margin: 0 0 5px 0;
+}
+
+#adresse {
+    color: #ffffff;
+}
+
+#adresse h3 {
+    color: #ffffff;
+    margin: 0 0 10px 0;
+}
+
+.reseaux {
+    padding: 5px;
+}
+
+#copyright {
+    height: 37px;
+    color: #5FAB73;
+    width: 100%;
+}
+
+#copyright p {
+    padding: 10px;
+}
+
+
+/******* CONTACTEZ-NOUS ******/
+#contact {
+    display: none;
+    background-color: #ffffff;
+    width: 100%;
+}
+
+#contact .forum {
+    width: 50%;
+    padding: 40px 0 40px 0;
+    margin: auto;
+    background-color: #ffffff;
+}
+
+#contact .titre {
+    color: #0E672C;
+    text-align: center;
+    margin-bottom: 50px; 
+}
+
+#contact .fas.fa-times {
+    font-size: 25px;
+    color: #0E672C;
+    cursor: pointer;
+    padding-right: 22px;
+    float: right;
+}
+
+#contact form {
+    width: 100%px;
+    margin: auto;
+    padding: 0 20px;
+}
+
+#contact label {
+    width: 100%;
+    color: #2d3e50;
+    margin: 0 0 24px 0;
+    display: block;
+    font-size: 20px;
+}
+
+#contact input[type=text], #contact input[type=email], #contact textarea {
+    width: 100%;
+    height: 55px;
+    border: 1px solid #0E672C;
+    border-radius: 4px;
+    margin: 0 0 26px 0;
+    font-size: 15px;
+    padding: 0 0 0 15px;
+}
+
+#contact textarea:focus, #contact input:focus, #contact input[type]:focus {
+    border-color: #0E672C;
+    box-shadow: 0 1px 1px rgba(14, 103, 44, 0.075) inset, 0 0 8px rgba(14, 103, 44, 0.6);
+    outline: 0 none;
+}
+
+#contact textarea {
+    height: 150px;
+    resize: none;
+    padding-top: 17px;
+}
+
+input[type=submit] {
+    width: 200px;
+    height: 63px;
+    background-color: #0E672C;
+    color: #ffffff;
+    border-radius: 10px;
+    border: none;
+    font-size: 20px;
+    cursor: pointer;
+    margin: auto;
+    display: block;
+}
+
+input[type=submit]:hover {
+    background-color: #ffffff;
+    color: #0E672C;
+    border: 1px solid #0E672C;
+    transition: 0.5s;
+}
+
+
+/*RESPONSIVE*/
+
+@media screen and (max-width: 780px){
+    nav {
+        display: none;
+    }
+
+    #burger {
+        display: block;
+    }
+
+    #options p {
+        font-size: 20px;
+        padding: 60px 0 0 30px;
+    }
+
+    #optionscontener{
+        padding: 100px 0 0 0;
+        font-size: 18px;
+    }
+
+    #optionscontener a {
+        font-size: 18px;
+        margin: 20px;
+    }
+
+    .bonus {
+        width: 100%;
+    }
+
+}
+
+
+/**************************************************** PAGE DESTINATION ***********************************************************/
+
+#containerDestination h1 {
+    text-align: justify;
+    font-family: 'Archivo Black', sans-serif;
+    font-size: 36px;
+    color: rgba(11, 38, 39, 0.767);
+    padding: 15px 0 20px 0;
+    margin-top: 100px;
+}
+
+#containerDestination h2 {
+    padding: 15px 0 30px 0;
+    text-align: justify; 
+    font-family: 'Montserrat', sans-serif;
+    font-weight: normal;
+   
+    color: rgba(31, 25, 25, 0.767);
+}
+
+#gallery {
+    display: flex;
+    flex-wrap: wrap;
+ 
+}
+
+
+#gallery div:hover {
+    box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+    transform: scale(1.05);
+}
+#gallery img {
+    display: block;
+    border-radius: 5px;
+}
+
+#gallery div{
+    position: relative;
+}
+
+#gallery div p {
+    position: absolute;
+    bottom:60px;
+    left: 30px;
+    color: #ffffff;
+    font-family: 'Nova Mono', monospace;
+    font-size: 30px;
+}
+
+#assistance  {
+    background-color: #54CC7C;
+    color: #ffffff;
+    text-align: center;
+    font-family: 'Nova Mono', monospace;
+    border-radius: 5px;
+    padding-top: 10px;
+    padding-bottom: 10px;
+    width: 500px;
+    margin: auto;
+    margin-top: 30px;
+    margin-bottom: 30px;
+    cursor: help;
+}
+
+#assistance a {
+    color: #ffffff;
+    padding-right: 15px;
+    text-align: center;
+}
+@media screen and (min-width: 901px) {
+    
+    #containerDestination {
+        margin: auto;
+        width: 900px;
+    }
+    #containerDestination h1, #containerDestination h2 {
+        
+        font-size: 30px;
+    }
+    #gallery {
+    width: 900px;
+    margin: auto;
+    }
+
+    #gallery div {
+        margin: 25px 25px;
+    }
+    #gallery img {
+        width: 400px;
+        height: 300px;
+    }
+}
+
+@media screen and (max-width:900px) {
+    #containerDestination {
+    width: 80%;
+    margin: auto;
+    }    
+    #containerDestination h1 {
+        text-align: center;
+        font-size: 1rem;
+    }
+    #containerDestination h2 {
+        font-size: 15px;
+        font-weight: normal;
+        text-align: left;
+    } 
+    
+    #gallery div {
+        width: 100%;
+        height: auto;
+        margin-bottom: 15px;
+    }
+    #gallery div p {
+        position: absolute;
+        bottom: 36px;
+        left: 11px;
+        color: #ffffff;
+        font-family: 'Nova Mono', monospace;
+        font-size: 21px;
+    }
+    #gallery img {
+        width: 100%;
+    }
+
+     #assistance {
+         width: 100%;
+    
+     }
+}
+
+/**************************************************** PAGE THEMATIQUE ***********************************************************/
+
+#containerThematique h1 {
+    text-align: justify;
+    font-family: 'Archivo Black', sans-serif;
+    font-size: 36px;
+    color: rgba(11, 38, 39, 0.767);
+    padding: 15px 0 20px 0;
+    margin-top: 100px;
+}
+
+#containerThematique h2 {
+    padding: 15px 0 30px 0;
+    text-align: justify; 
+    font-family: 'Montserrat', sans-serif;
+    font-weight: normal;
+   
+    color: rgba(31, 25, 25, 0.767);
+}
+
+#gallery {
+    display: flex;
+    flex-wrap: wrap;
+ 
+}
+
+
+#gallery div:hover {
+    box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+    transform: scale(1.05);
+}
+#gallery img {
+    display: block;
+    border-radius: 5px;
+}
+
+#gallery div{
+    position: relative;
+}
+
+#gallery div p {
+    position: absolute;
+    bottom:60px;
+    left: 30px;
+    color: #ffffff;
+    font-family: 'Nova Mono', monospace;
+    font-size: 30px;
+}
+
+
+#assistance  {
+    background-color: #54CC7C;
+    color: #ffffff;
+    text-align: center;
+    font-family: 'Nova Mono', monospace;
+    border-radius: 5px;
+    padding-top: 10px;
+    padding-bottom: 10px;
+    width: 500px;
+    margin: auto;
+    margin-top: 30px;
+    margin-bottom: 30px;
+    cursor: help;
+
+}
+
+#assistance a {
+    color: #ffffff;
+    padding-right: 15px;
+    text-align: center;
+}
+@media screen and (min-width: 901px) {
+    
+    #containerThematique {
+        margin: auto;
+        width: 900px;
+    }
+    #containerThematique h1, #containerThematique h2 {
+        
+        font-size: 30px;
+    }
+    #gallery {
+    width: 900px;
+    margin: auto;
+    }
+
+    #gallery div {
+        margin: 25px 25px;
+    }
+    #gallery img {
+        width: 400px;
+        height: 300px;
+    }
+}
+
+@media screen and (max-width:900px) {
+    #containerThematique {
+    width: 80%;
+    margin: auto;
+    }    
+    #containerThematique h1 {
+        text-align: center;
+        font-size: 1rem;
+    }
+    #containerThematique h2 {
+        font-size: 15px;
+        font-weight: normal;
+        text-align: left;
+    }
+
+    #gallery {
+        width: 100%;
+    }
+
+    #gallery div {
+        width: 100%;
+        height: auto;
+        margin-bottom: 15px;
+    }
+    #gallery div p {
+        position: absolute;
+        bottom: 36px;
+        left: 11px;
+        color: #ffffff;
+        font-family: 'Nova Mono', monospace;
+        font-size: 21px;
+    }
+    #gallery img {
+        width: 100%;
+    }
+
+     #assistance {
+         width: 100%;
+    
+     }
+}
+
+/**************************************************** PAGE CHOIX ***********************************************************/
+
+#containerChoixItinéraire {
+    padding: 80px 0 0 0;
+}
+
+
+/**************************************************** PAGE ITINERAIRE ***********************************************************/
+
+.price {
+	color: #ffffff;
+	font-weight: bold;
+}
+
+.reservation {
+	display: flex;
+	float: right;
+}
+
+.reservation p {
+	font-size: 25px;
+	color: #000000;
+}
+
+
+#itineraire {
+	margin: 180px auto 0 auto;
+	box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+}
+
+#itineraire p {
+	padding: 10px 0;
+	text-align: justify;
+}
+
+.partageRS {
+    float: left;
+    background-color: #ffffff;
+    font-weight: bold;
+    text-align: center;
+}
+
+#photo__savoie {
+    background-image: url(../img/savoie.jpg); 
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: top;
+    height: 600px;
+    position: relative;
+}  
+
+#photo__bretagne {
+	background-image: url(../img/StMichel.jpg); 
+	background-repeat: no-repeat;
+	background-size: cover;
+	background-position: top;
+	height: 600px;
+	position: relative;
+} 
+
+#photo__savoie p {
+	color: #ffffff;
+	font-weight: bold;
+	font-size: 38px;
+	left: 200px;
+	position: absolute;
+	padding: 400px 10px 0 0;
+}
+
+#photo__bretagne p {
+	color: #ffffff;
+	font-weight: bold;
+	font-size: 38px;
+	left: 200px;
+	position: absolute;
+	padding: 400px 10px 0 0;
+}
+
+/************** ↓↓ coeur  ↓↓ **************/
+
+#photo__savoie i {
+	color : green; 
+	/* color : #54CC7C; */ 	
+			/* vert clair */
+	font-size: 50px;
+	position: absolute;
+	right: 30px;
+	top: 30px;
+	vertical-align: top;
+}
+
+#photo__bretagne i {
+	color : green; 
+	/* color : #54CC7C; */ 	
+			/* vert clair */
+	font-size: 50px;
+	position: absolute;
+	right: 30px;
+	top: 30px;
+	vertical-align: top;
+}
+
+/************** ↑↑ coeur ↑↑ **************/ 
+
+#itineraire article {
+	padding: 20px 20px 40px 20px;
+} 
+
+.reservation a {
+	color: #ffffff;
+	background-color: #54CC7C;
+	text-decoration: none;
+	font-weight: bold;
+	border: 2px solid #54CC7C;
+	padding: 15px;
+	margin: 0 0 0 20px;
+}
+
+.reservation a:hover {
+	color: #54CC7C;
+	background-color: #ffffff;
+}
+
+
+/*********** Carte *************/
+
+.map {
+    width: 100%;
+    height: 600px;
+    margin: 30px 0;
+}
+
+/************** Informations Pratiques ***************/
+
+.infosPratiques {
+    font-size: 22px;
+    color: #61af76;
+    font-weight: bold;
+    padding: 10px 0;
+}
+
+#infos article {
+	padding: 0 30px;
+}
+
+#infos p {
+	text-align: justify; 
+}
+
+#infos a {
+	color: #54CC7C;
+	text-decoration: none;
+}
+
+#infos a:hover {
+	color: #000000;
+}
+
+#info {
+	background-color: #C4C4C4;
+}
+
+
+/**************** Témoignages  ****************/
+
+#temoignage { 
+    display: flex;
+    flex-wrap: wrap;
+    margin: 50px auto;
+}
+
+@import url(https://maxcdn.bootstrapcdn.com/font-awesome/4.4.0/css/font-awesome.min.css);
+@import url(https://fonts.googleapis.com/css?family=Raleway:400,800);
+figure.snip1192 {
+  font-family: 'Raleway', Arial, sans-serif;
+  position: relative;
+  overflow: hidden;
+  margin: 20px auto;
+  min-width: 220px;
+  max-width: 310px;
+  width: 100%;
+  color: #333;
+  text-align: left;
+  box-shadow: none !important;
+}
+
+figure.snip1192 * {
+  -webkit-box-sizing: border-box;
+  box-sizing: border-box;
+}
+
+figure.snip1192 img {
+  max-width: 100%;
+  height: 100px;
+  width: 100px;
+  border-radius: 50%;
+  margin-bottom: 15px;
+  display: inline-block;
+  position: relative;
+}
+
+figure.snip1192 blockquote {
+  margin: 0;
+  display: block;
+  border-radius: 8px;
+  position: relative;
+  background-color: #54CC7C;
+  padding: 30px 50px 65px 50px;
+  font-size: 0.8em;
+  font-weight: 500;
+  margin: 0 0 -50px;
+  line-height: 1.6em;
+  box-shadow: 0 0 5px rgba(0, 0, 0, 0.15);
+}
+
+figure.snip1192 blockquote:before,
+figure.snip1192 blockquote:after {
+  font-family: 'FontAwesome';
+  content: "\201C";
+  position: absolute;
+  font-size: 50px;
+  opacity: 0.3;
+  font-style: normal;
+}
+
+figure.snip1192 blockquote:before {
+  top: 35px;
+  left: 20px;
+}
+figure.snip1192 blockquote:after {
+  content: "\201D";
+  right: 20px;
+  bottom: 35px;
+}
+
+figure.snip1192 .author {
+  margin: 0;
+  text-transform: uppercase;
+  text-align: center;
+  color: black;
+}
+
+figure.snip1192 .author h5 {
+  opacity: 0.8;
+  margin: 0;
+  font-weight: 800;
+}
+
+figure.snip1192 .author h5 span {
+  font-weight: 400;
+  text-transform: none;
+  display: block;
+}
+
+
+/************* Partage sur RS *****************/
+ 
+#partage {
+    margin: 180px;
+    padding: 25px 0;
+    text-align: center;
+} 
+
+#partage img {
+    border-radius: 50%;
+    width: 50px;
+    text-align: center;
+}
+
+
+/***************** Rotation *******************/
+/* #rotation {
+	margin: auto;
+	right: 300px;
+}
+
+.rotate {
+animation: rotation 8s infinite linear;
+}
+
+@keyframes rotation {
+from {
+    transform: rotate(0deg);
+}
+to {
+    transform: rotate(359deg);
+}
+} */
+
+@media screen and (max-width:780px) {
+    .map {
+        width: 100%;
+        height: 150px;
+    }
+
+    #photo__bretagne p {
+        position: absolute;
+        left: 20px;
+    }
+
+    #photo__savoie p {
+        position: absolute;
+        left: 20px;
+    }
+
+    #photo__bretagne i {
+        position: absolute;
+        top: 20px;
+        right: 20px;
+        font-size: 50px;
+    }
+
+}
+
+
+
+
+
+/*************************************************** PAGE RESERVATION ****************************************************/
+
+/****** PARTIE CALENDRIER ******/
+#calendrier {
+    /*display: flex;
+    justify-content: center;
+    font-size: 20px;*/
+    margin: 20px auto;
+    color: #61AF76;
+}
+
+#calendrier .choixDate {
+    display: flex;
+    justify-content: center;
+}
+
+#calendrier .choixDate div {
+    margin: 20px;
+}
+#calendrier div label {
+    display: block;
+    margin-bottom: 8px;
+}
+
+#calendrier input[type="date"] {
+    font-size: 20px;
+    border-radius: 5px;
+    border: 1px solid #61AF76;
+    color: #0E672C;
+    box-shadow: 0 1px 1px rgba(14, 103, 44, 0.075) inset, 0 0 8px rgba(14, 103, 44, 0.6);
+    outline: 0 none;
+}
+
+#jour {
+    font-weight: bold;
+    font-size: 16px; 
+    padding: 0 0 0 12px;
+    margin: 0 0 10px 0;
+}
+
+#jour input {
+    font-size: 16px;
+    width: 40px;
+    text-align: center;
+    border: none;
+    background-color: #eee;
+}
+
+
+
+/****** SECTION RESERVATION GEOFFREY ******/ 
+.line {
+    width: 380px;
+    height: 1px;
+    background-color: #61af76;
+    margin: 5px auto;
+    box-shadow: 1px 1px 2px #999999;
+}
+
+.btn {
+    text-align: center;
+    vertical-align: middle;
+    cursor: pointer;
+}
+
+.btn-primary {
+    color: #61af76;
+    background-color: #ffffff;
+    border-radius: 5px;
+    font-weight: bold;
+    display: flex;
+    justify-content: space-around;
+}
+
+/* .btn-primary:hover {
+    background-color: #61af76;
+    color: #ffffff;
+} */
+
+.shop-item {
+    margin: 30px;
+    border-radius: 5px;
+    cursor: pointer;
+    box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+}
+
+.shop-item-button {
+    background-color: #ffffff;
+    color: #61af76;
+    display: block;
+}
+
+.shop-item-button:hover {
+    background-color: #61af76;
+    color: #ffffff;
+}
+
+.shop-item-title {
+    display: block;
+    width: 100%;
+    text-align: center;
+    font-weight: bold;
+    font-size: 1em;
+    padding: 10px 0;
+}
+
+.shop-item-image {
+    width: 220px;
+    height: 150px;
+    display: block;
+}
+
+.shop-item-details {
+    display: flex;
+    justify-content: space-around;
+    padding: 10px 0;
+}
+
+.shop-item-price {
+
+    font-weight: bold;
+}
+
+/* .shop-item-price:hover {
+    background-color: #18bd9b;
+    color: #ffffff;
+}  */
+
+.shop-items {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+    margin: auto;
+}
+
+.cart-header {
+    font-weight: bold;
+    font-size: 1em;
+    color: #333;
+}
+
+.cart-column {
+    display: flex;
+    align-items: center;
+    border-bottom: 1px solid black;
+    margin: 0 .5em 0 .5em;
+    padding: 0 0 5px 5px;
+    margin-top: 5px;
+}
+
+.cart-row {
+    display: flex;
+}
+
+.cart-item {
+    width: 45%;
+}
+
+.cart-price {
+    width: 30%;
+    font-size: 1em;
+    color: #333;
+}
+
+.cart-quantity {
+    width: 25%;
+}
+
+.cart-item-title {
+    color: #333;
+    font-size: 1em;
+}
+
+.btn-danger {
+    color: white;
+    background-color: #EB5757;
+    border: none;
+    border-radius: .3em;
+    font-weight: bold;
+    font-size: 12px;
+    padding: 8px;
+}
+
+.btn-danger:hover {
+    background-color: #CC4C4C;
+}
+
+.cart-quantity-input {
+    height: 30px;
+    width: 40px;
+    border-radius: 5px;
+    border: 1px solid #61af76;
+    background-color: #eee;
+    color: #333;
+    padding: 0;
+    text-align: center;
+    font-size: 1em;
+    margin-right: 15px;
+}
+
+.cart-row:last-child {
+    border-bottom: 1px solid black;
+}
+
+.cart-row:last-child .cart-column {
+    border: none;
+}
+
+.cart-total {
+    text-align: center;
+    margin-top: 10px;
+    margin-right: 10px;
+    color: #61AF76;
+}
+
+.cart-total-title {
+    font-weight: bold;
+    font-size: 1em;
+    margin-right: 20px;
+}
+
+.cart-total-price {
+    font-weight: bold;
+    font-size: 1em;
+}
+
+.btn-purchase {
+    width: 200px;
+    display: block;
+    margin: 20px auto;
+    font-size: 18px;
+    border: 1px solid #61af76;
+    border-radius: 5px;
+    padding: 8px;
+    text-decoration: none;
+}
+
+.btn-purchase:hover {
+    background-color: #61af76;
+    color: #ffffff;
+}
+
+/*********** Toast **********/
+#snackbar {
+    visibility: hidden; 
+    min-width: 250px; 
+    margin-left: -125px; 
+    background-color: #61AF76; 
+    color: #fff; 
+    text-align: center; 
+    border-radius: 2px; 
+    padding: 16px; 
+    position: fixed; 
+    z-index: 1;
+    left: 50%; 
+    bottom: 30px; 
+}
+
+#snackbar.show {
+    visibility: visible; 
+    -webkit-animation: fadein 0.5s, fadeout 0.5s 2.5s;
+    animation: fadein 0.5s, fadeout 0.5s 2.5s;
+}
+
+  /* Animations to fade the snackbar in and out */
+@-webkit-keyframes fadein {
+    from {bottom: 0; opacity: 0;}
+    to {bottom: 30px; opacity: 1;}
+}
+  
+@keyframes fadein {
+    from {bottom: 0; opacity: 0;}
+    to {bottom: 30px; opacity: 1;}
+}
+  
+@-webkit-keyframes fadeout {
+    from {bottom: 30px; opacity: 1;}
+    to {bottom: 0; opacity: 0;}
+}
+  
+@keyframes fadeout {
+    from {bottom: 30px; opacity: 1;}
+    to {bottom: 0; opacity: 0;}
+}
+
+/**************** Section Hébergement *****************/
+
+/* .main_div
+  {
+  text-align:center;
+  background: #00C492;
+  padding:20px; width: 400px;
+  }
+.inner_div
+  {
+  background: #fff;
+  margin-top:20px;
+  height: 100px;
+  }
+.buttons a
+  {
+  font-size: 16px;
+  }
+.buttons a:hover
+  {
+  cursor:pointer;
+  font-size: 16px;
+  } */
+
+.hebergement {
+	display: flex;
+	margin: 20px auto;
+	justify-content: center;
+}
+
+.btnHebergement {
+	color: #61af76;
+    background-color: #ffffff;
+    border: 1px solid #61af76;
+	border-radius: 5px;
+	font-size: 16px;
+	text-decoration: none;
+	font-weight: bold;
+	padding: 10px;
+	margin: 5px 20px;
+}
+
+.btnHebergement:hover {
+	color: #ffffff;
+	background-color: #61af76;
+	border: 1px solid #61af76;
+	transition: 0.5s;
+}
+
+.btnSelected{
+	color: #ffffff;
+    background-color: #61af76;
+    border: 1px solid #61af76;
+	border-radius: 5px;
+	font-size: 16px;
+	text-decoration: none;
+	font-weight: bold;
+	padding: 10px;
+}
+
+.book p {
+	font-size: 20px;
+	font-weight: bold;
+	padding: 0 10px;
+}
+
+.book:hover {
+	color: #ffffff;
+	background-color: #61af76;
+	border-radius: 0 0 5px 5px;
+}
+
+.blocH img {
+	width: 220px;
+	height: 150px;
+	border-radius: 5px 5px 0 0;
+	display: block;
+}
+
+.overlayContainer {
+  position: relative;
+}
+
+.overlayContainer:hover .overlay {
+  opacity: 1;
+}
+
+.overlay {
+  position: absolute;
+  left: 0; 
+  bottom: 0;
+  background: rgba(0, 0, 0, 0.5);
+  color: #f1f1f1; 
+  width: 100%;
+  transition: .5s ease;
+  opacity: 0;
+  color: white;
+  text-decoration: none;
+  font-size: 16px;
+  border-radius: 5px 5px 0 0;
+  padding: 66px 0;
+  text-align: center;
+  margin: auto;
+}
+
+#choixHebergement {
+	display: flex;
+    justify-content: center;
+    padding: 40px 0 0 0;
+    text-align: center;
+}
+
+/*#hotelButton {
+	color: #ffffff;
+	background-color: #18bd9b;
+	border: 1px solid #18bd9b;
+}*/
+
+#blocGite {
+	display: none;
+}
+
+#blocAppartement {
+	display: none;
+}
+
+#blocCamping {
+	display: none;
+}
+
+
+/***Informations***/
+
+#informations {
+    margin: 20px auto;
+}
+
+#informations form {
+    margin: 20px auto;
+}
+
+#informations input {
+	width: 90%;
+	padding: 7px;
+	margin: 20px auto;
+	display: block;
+}
+
+.prixTTC {
+	font-size: 18px;
+	font-weight: bold;
+	color: #61af76;
+	text-align: center;
+}
+
+#conditions {
+    font-size: 12px;
+    text-align: center;
+    padding: 10px;
+}
+
+/*********** Ajout de Geo  **********/
+
+.selected {
+	border: 4px solid #61AF76;
+    border-radius: 9px;
+}
+
+#reservation {
+    border: 2px solid #61af76;
+    margin: 50px;
+    background-color: #eee;
+    border-radius: 5px;
+}
+
+.clear {
+    clear: both;
+}
+
+main{
+    display: flex;
+    justify-content: space-between;
+    width:100%;
+  }
+  
+section{
+   width: 75%;
+}
+
+aside{
+    margin: 50px;
+    flex-basis: 25%;  
+}
+  
+.aside-inner{
+    position: sticky;
+    top: 20px;
+    border:1px solid black;
+    height:20rem;
+    padding: 0 0 30rem 0;
+}
+
+/******** Panier Responsive ********/
+#panierRes {
+    width: 100%;
+    display: none;
+    background-color: #61AF76;
+    color: #ffffff;
+}
+
+
+/************************************************* PAGE PAIEMENT *********************************************************/
+
+
+#containerPaiement {
+    width: 90%;
+    display: flex;
+    margin: auto;
+}
+
+.resa {
+    width: 50%;
+    margin-top: 100px;
+}
+
+#paiement {
+    width: 50%;
+    margin-left: 20px;
+}
+.resa h3 {
+    font-family: 'Archivo Black', sans-serif;
+    color: rgba(11, 38, 39, 0.767);
+    font-size: 30px;
+    width: 50%;
+    margin: 50px 0 10px 0;
+}
+
+ #paiement h3 {
+     text-align: right;
+    font-family: 'Archivo Black', sans-serif;
+    color: rgba(11, 38, 39, 0.767);
+    font-size: 20px;
+    width: 50%;
+    margin: 160px 0 20px 0;
+  
+}
+
+.imagePaiement { 
+    width: 400px;
+    height: 300px;
+    border-radius: 5px;
+    margin: 20px 0;
+}
+
+.formulairePaiement {
+    margin: auto;
+} 
+
+ #moyensPaiement, h4 {
+     display: flex;
+     margin-top: 20px;
+     font-weight: normal;
+ }
+#moyensPaiement p {
+    margin-right: 10px;
+}
+ .typeCarte label {
+     margin-right: 10px;
+ }
+
+.formulairePaiement input {
+    margin-bottom: 10px;
+    border-radius: 5px;
+    height: 15px;
+    border: 1px dotted black;
+    padding: 3px;
+}
+
+
+.formulairePaiement label {
+    font-size: 15px;
+    font-family: 'Montserrat', sans-serif;
+}
+#securite, .date {
+    width: 40px;
+    margin-right: 5px;
+}
+
+.expire {
+    display: flex;
+}
+select {
+    margin-bottom: 40px;
+}
+#boutonPaiement {
+    border: 0.5px white;
+    color: white;
+    padding: 10px;
+    background-color: #28da84;
+    margin: auto;
+}
+
+#erreur {
+    color: rgba(0, 5, 70, 0.945);
+    display: none;
+    width: 260px;
+    padding: 5px;
+    border-radius: 3px;
+    margin-top: 5px;
+}
+
+.modal {
+    display: none;
+    width: 360px;
+    height: 60px;
+    background-color: rgb(113, 206, 162);
+    color: white;
+    margin-top: 20px;
+    padding: 30px;
+    font-size: 20px;
+    border-radius: 3px;
+}
+
+#close {
+    text-decoration: none;
+    color: #fff;
+    float: right;
+    font-size: 12px;
+    font-weight: bold;
+  }
+
+  
+.close:hover,
+.close:focus {
+  color: black;
+  text-decoration: none;
+  cursor: pointer;
+}
+
+.tooltip {
+    position: relative;
+    display: inline-block;
+    /* border-bottom: 1px dotted black; */
+  }
+  
+  .tooltip .tooltiptext {
+    visibility: hidden;
+    width: 120px;
+    background-color: rgb(31, 25, 25, 0.8);
+    color: #fff;
+    text-align: center;
+    border-radius: 6px;
+    padding: 5px 0;
+    position: absolute;
+    z-index: 1;
+    top: -5px;
+    left: 110%;
+  }
+
+  
+.tooltip .tooltiptext::after {
+    content: "";
+    position: absolute;
+    top: 50%;
+    right: 100%;
+    margin-top: -30px;
+    border-width: 5px;
+    border-style: solid;
+    border-color: transparent black transparent transparent;
+  }
+  .tooltip:hover .tooltiptext {
+    visibility: visible;
+  }
+  
+hr {
+    margin-top: 150px;
+    margin-bottom: 80px;
+}
+@media screen and (max-width:920px) {
+ #container {
+     display: block;
+     width: 100%;
+     margin-top: 30px;
+ }
+
+ .imagePaiement {
+    width: 280px;
+    height: 220px;
+ }
+
+ .resa{
+     margin-top: 100px;
+ }
+    
+ 
+ hr {
+     /* width: 100%; */
+     margin: 20px 0;
+ }
+
+ #containerPaiement {
+     display: block;
+ }
+
+ #paiement{
+     /* margin: auto; */
+     width:80%;
+     /* display: block; */
+ }
+ .resa h2 {
+     margin-bottom: 30px ;
+     text-align: left;
+     padding: 0;
+ }
+
+ #paiement h3 {
+     margin-top: 30px;
+ }
+
+ #boutonPaiement{
+     margin-bottom: 15px;
+ }
+  .modal {
+     width: 100%;
+     margin-top: 0px;
+ }
+ #close {
+     font-size: 25px;
+ }
+
+ }
+
+
+/**************************************************** PAGE FAQ ***********************************************************/
+
+#containerFAQ {
+    width: 90%;
+    margin: auto;
+    padding: 100px 0;
+}
+
+.accordion {
+	background-color: #ffffff;
+	color: #61af76;
+	cursor: pointer;
+	padding: 18px;
+	width: 100%;
+	text-align: left;
+	border: none;
+	outline: none;
+	transition: 0.4s;
+	border: 1px solid #e6e6e6;
+	border-bottom: 0;
+	border-radius: 5px;
+	text-transform: uppercase;
+}
+  
+.active, .accordion:hover {
+	background-color: #61af76;
+	color: #ffffff;
+}
+  
+.panel {
+	padding: 0 18px;
+	background-color: white;
+	max-height: 0;
+	overflow: hidden;
+	transition: max-height 0.2s ease-out;
+	border: 1px solid #e6e6e6;
+	border-bottom: 0;
+	border-radius: 5px;
+}
+
+.panel p {
+	padding: 10px;
+}
+
+.panel li {
+	margin: 0 0 0 20px;
+}
+
+.accordion:after {
+	content: "\02795"; 
+	font-size: 13px;
+	color: #ffffff;
+	float: right;
+	margin-left: 5px;
+}
+  
+.active:after {
+	content: "\2796";
+}
+
+
+/**************************************************** PAGE CONTACT ***********************************************************/
+
+
+
+
+/**************************************************** PAGE MENTIONS LEGALES****************************************************/
+
+#mentions {
+    padding: 100px 0;
+}
+
+#mentions p {
+	padding: 10px;
+	text-align: justify;
+}
+
+#mentions a {
+	color: #61af76;
+}
+
+#mentions li {
+	margin: 0 0 0 20px;
+}
+
+/**************************************************** MEDIAS QUERIES ****************************************************/
+
+@media screen and (max-width: 470px){
+    .line {
+        width: 222px;
+    }
+
+    #calendrier .choixDate {
+        padding-left: 47px;
+    }
+
+    #choixHebergement {
+        display: grid;
+    }
+
+}
+
+@media screen and (max-width: 680px){
+    .container {
+        width: 100%;
+    }
+
+    #burger {
+        display: block;
+    }
+
+    .shop-item {
+        margin: 30px 0;
+    }
+
+    #calendrier .choixDate {
+        display: contents;
+    }
+
+    #contact .forum {
+        width: 100%;
+    }
+
+    footer #infosFooter {
+        display: block;
+    }
+
+    #infosFooter div {
+        width: auto;
+        margin: auto;
+    }
+}
+
+@media screen and (max-width: 994px) {
+    #reservation {
+        display: none;
+    }
+
+    #test {
+        width: 100%;
+    }
+
+    #panierRes {
+        display: block;
+        position: sticky;
+        bottom: 0;
+        background-color: #ffffff;
+        border-color: #0E672C;
+        box-shadow: 0 1px 1px rgba(14, 103, 44, 0.075) inset, 0 0 8px rgba(14, 103, 44, 0.6);
+        display: flex;
+        flex-wrap: wrap;
+    }
+
+    #panierRes .cart-total {
+        padding: 10px;
+        margin: auto 0;
+        font-size: 1.5em;
+    }
+
+    .btn.btn-primary.btn-purchase {
+        width: 100px;
+        margin: auto;
+        padding: 8px;
+    }
+
+    #panierCache {
+        width: 100%;
+    }
+
+    .fas.fa-chevron-down {
+    font-size: 2em;
+    color: #0E672C;
+    padding: 10px;
+    }
+
+    #panierCache {
+        display: none;
+    }
+}
