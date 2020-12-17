@@ -2,11 +2,24 @@
 <html>
     <head>
         <meta charset="UTF-8">
-        <title>{% block title %}Welcome!{% endblock %}</title>
-        {% block stylesheets %}{% endblock %}
+        <meta name="author" content="Velonaute-Team">
+        <meta name= "description" content="Le meilleur endroit pour louer votre vélo !">
+        <meta name="viewport" content="width=device-width, initial-scale=1">  
+        <title>{% block title %}Page Réservation{% endblock %}</title>
+        {% block stylesheets %}
+            <link rel="stylesheet" type="text/css" href="{{ asset('build/css/app.css') }}">
+            <link href="https://fonts.googleapis.com/css2?family=Sacramento&display=swap" rel="stylesheet">
+            <link href="https://fonts.googleapis.com/css2?family=Nothing+You+Could+Do&display=swap" rel="stylesheet">
+            <script src="https://kit.fontawesome.com/3c7632cea0.js" crossorigin="anonymous"></script>  
+        {% endblock %}
     </head>
     <body>
-        {% block body %}{% endblock %}
+        {% block body %}
+        
+        <p>Hello World</p>
+        {% endblock %}
         {% block javascripts %}{% endblock %}
+        <script src="{{ asset('build/css/app.js') }}"></script>
+        
     </body>
 </html>

@@ -1,0 +1,602 @@
+
+{% extends "base.html.twig" %}
+
+
+        {% block body %}
+
+    <body>
+                {# <!------------------------- HEADER --------------------------------> #}
+        <header>
+            <div id="logo">
+                <a href="index.html">
+                <img src="img/logo-officiel.png" alt="logo de site">
+                </a>
+                <h1>Velonaute</h1>
+            </div>
+            <nav>
+                <div id="rechercheConnexion">
+                    <div id="recherche">
+                        <input id="input" type="text" name="Recherche" placeholder="Recherche">
+                        <i class="fas fa-search"></i>
+                        <a href="#" id="connexion">Connexion</a>
+                    </div>
+                </div>
+                <div>
+                    <a href="destinations.html">Destinations</a>
+                    <a href="thematiques.html">Thématiques</a>
+                </div>
+            </nav>
+            <div class="clear"></div>
+            <div id="burger">
+                <i class="fas fa-bars" ></i>
+            </div>
+            <div id="burgerMenu">
+                <a href="#">Connexion</a> 
+                <a href="destinations.html">Destinations</a>
+                <a href="thematiques.html">Thématiques</a>        
+                <a href="#">Contact</a>    
+            </div>
+        </header>
+    <main>
+        <section id="test">
+            {# <!-- ********** CALENDRIER *********** --> #}
+            <section id="calendrier">
+                <h2 class="section-header">1 - Je choisis mon date</h2>
+                <div class="line"></div>
+                <div class="choixDate">
+                    <div>
+                        <label for="dateDep">Votre date de départ</label>
+                        <input id="dateDep" type="date" value="" min="2020-01-01" max="2021-12-31" onChange="dateDepartCallBack(event)" required>
+                    </div>
+                    <div>
+                        <label for="dateRet">Votre date de retour</label>
+                        <input id="dateRet" type="date" min="2020-01-01" max="2021-12-31" onChange="dateRetourCallBack(event)">
+                    </div>           
+                </section>
+            {# <!-- ********** VÉlO & ÉQUIPEMENTS *********** --> #}
+            <section class="container content-section">
+                <h2 class="section-header">2 - Je choisis mon vélo</h2>
+                <div class="line"></div>
+                <div class="shop-items">
+                    <div class="shop-item">
+                        <div class="btn btn-primary shop-item-button" onclick="toast()">
+                            <p class="shop-item-title">Vélo de Route</p>
+                            <img class="shop-item-image" src="img/reservation/route.jpg" alt="Vélo du route">
+                            <div class="shop-item-details">    
+                                <p class="shop-item-price">25 € / jour</p> 
+                                <p class="ajouter">Ajouter</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="shop-item">
+                        <div class="btn btn-primary shop-item-button" onclick="toast()">
+                            <p class="shop-item-title">VTT</p>
+                            <img class="shop-item-image" src="img/reservation/vtt.jpg" alt="VTT">
+                            <div class="shop-item-details">    
+                                <p class="shop-item-price">25 € / jour</p> 
+                                <p>Ajouter</p>
+                            </div>
+                        </div> 
+                    </div>
+                    <div class="shop-item">
+                        <div class="btn btn-primary shop-item-button" onclick="toast()">
+                            <p class="shop-item-title">Vélo Électrique</p>
+                            <img class="shop-item-image" src="img/reservation/electrique.jpg" alt="Vélo Électrique">
+                            <div class="shop-item-details"> 
+                                <p class="shop-item-price">30 € / jour</p> 
+                                <p>Ajouter</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="shop-item">
+                        <div class="btn btn-primary shop-item-button" onclick="toast()">
+                            <p class="shop-item-title">Vélo Enfant (jusqu'a 149 cm)</p>
+                            <img class="shop-item-image" src="img/reservation/enfant.jpg" alt="Vélo enfant">
+                            <div class="shop-item-details"> 
+                                <p class="shop-item-price">20 € / jour</p> 
+                                <p>Ajouter</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section> 
+                <section class="container content-section">
+                    <h2 class="section-header">2 - Je choisis mes équipements</h2>
+                    <div class="line"></div>
+                    <div class="shop-items">
+                        <div class="shop-item">
+                            <div class="btn btn-primary shop-item-button" onclick="toast()">
+                                <p class="shop-item-title">Casque</p>
+                                <img class="shop-item-image" src="img/reservation/casque.jpg" alt="casque">
+                                <div class="shop-item-details"> 
+                                    <p class="shop-item-price">2 € / jour</p> 
+                                    <p>Ajouter</p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="shop-item">
+                            <div class="btn btn-primary shop-item-button" onclick="toast()">
+                                <p class="shop-item-title">Antivol</p>
+                                <img class="shop-item-image" src="img/reservation/antivol.jpg" alt="antivol">
+                                <div class="shop-item-details"> 
+                                    <p class="shop-item-price">2 € / jour</p> 
+                                    <p>Ajouter</p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="shop-item">
+                            <div class="btn btn-primary shop-item-button" onclick="toast()">
+                                <p class="shop-item-title">Paire de sacoche arrière</p>
+                                <img class="shop-item-image" src="img/reservation/sac.jpg" alt="sac">
+                                <div class="shop-item-details">
+                                    <p class="shop-item-price">5 € / jour</p> 
+                                    <p>Ajouter</p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="shop-item">
+                            <div class="btn btn-primary shop-item-button" onclick="toast()">
+                                <p class="shop-item-title">Siège Enfant (< 25kg)</p>
+                                <img class="shop-item-image" src="img/reservation/siege.jpg" alt="Siège enfant">
+                                <div class="shop-item-details">
+                                    <p class="shop-item-price">5 € / jour</p> 
+                                    <p>Ajouter</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </section> 
+                <section class="container content-section">
+                    <div class="shop-items">
+                        <div class="shop-item">
+                            <div class="btn btn-primary shop-item-button" onclick="toast()">
+                                <p class="shop-item-title">Kit Réparation</p>
+                                <img class="shop-item-image" src="img/reservation/kit.jpg" alt="Kit réparation">
+                                <div class="shop-item-details">  
+                                    <p class="shop-item-price">5 € / jour</p> 
+                                    <p>Ajouter</p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="shop-item">
+                            <div class="btn btn-primary shop-item-button" onclick="toast()">
+                                <p class="shop-item-title">Poncho</p>
+                                <img class="shop-item-image" src="img/reservation/poncho.jpg" alt="Poncho">
+                                <div class="shop-item-details">
+                                    <p class="shop-item-price">2 € / jour</p> 
+                                    <p>Ajouter</p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="shop-item">
+                            <div class="btn btn-primary shop-item-button" onclick="toast()">
+                                <p class="shop-item-title">Remorque Enfant</p>
+                                <img class="shop-item-image" src="img/reservation/remorque.jpg" alt="Remorque">
+                                <div class="shop-item-details">
+                                    <p class="shop-item-price">20 € / jour</p> 
+                                    <p>Ajouter</p>
+                                </div>   
+                            </div>
+                        </div>
+                        <div class="shop-item">
+                            <div class="btn btn-primary shop-item-button" onclick="toast()">
+                                <p class="shop-item-title">Remorque Animal</p>
+                                <img class="shop-item-image" src="img/reservation/remorquepet.jpg" alt="Remorque animal">
+                                <div class="shop-item-details">   
+                                    <p class="shop-item-price">20 € / jour</p> 
+                                    <p>Ajouter</p>
+                                </div>
+                            </div>  
+                        </div>
+                    </div>
+                </div>
+            </section>   
+
+
+            {# <!-- ********************************************************************************************** --> #}
+            <section class="container content-section">
+                <h2 class="section-header" id="hebergement">4 - Je choisis mon hébergement</h2>
+                <div class="line"></div>
+
+                <div id="choixHebergement">
+                    <a href="#hebergement" onclick="toggleVisibility('blocHotel');" class="btnHebergement" id="hotelButton">Hôtel</a>
+                    <a href="#hebergement" onclick="toggleVisibility('blocGite');" class="btnHebergement" id="giteButton">Maison d'hôte</a>
+                    <a href="#hebergement" onclick="toggleVisibility('blocAppartement');" class="btnHebergement" id="appartementButton">Appartement</a>
+                    <a href="#hebergement" onclick="toggleVisibility('blocCamping');" class="btnHebergement" id="campingButton">Camping</a>
+                </div>
+                
+                <div id="blocHotel" class="displayHebergement">
+                    <div class="hebergement">
+                    
+                        <div class="shop-items">
+                            <div class="shop-item">
+                                <div class="btn btn-primary shop-item-button" onclick="toast()">
+                                    <p class="shop-item-title">Hôtel International</p>
+                                    <img class="shop-item-image" src="https://cf.bstatic.com/images/hotel/max1280x900/225/225816945.jpg" alt="Hôtel Best Western International Annecy">
+                                    <div class="shop-item-details">   
+                                        <p class="shop-item-price">87 € / nuit</p> 
+                                        <p>Ajouter</p>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="shop-item">
+                                <div class="btn btn-primary shop-item-button" onclick="toast()">
+                                <p class="shop-item-title">Hotel Le Bel Abri</p>
+                                <img class="shop-item-image" src="https://cf.bstatic.com/images/hotel/max1280x900/255/255107055.jpg" alt="Hôtel Le Bel Abri Annecy">
+                                <div class="shop-item-details">
+                                    <p class="shop-item-price">99 € / nuit</p> 
+                                        <p>Ajouter</p>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="shop-item">
+                                <div class="btn btn-primary shop-item-button" onclick="toast()">
+                                    <p class="shop-item-title">Hotel Beauregard</p>
+                                    <img class="shop-item-image" src="https://cf.bstatic.com/images/hotel/max1280x900/195/195828276.jpg" alt="Hôtel Beauregard, The Originals Relais">
+                                    <div class="shop-item-details">
+                                        <p class="shop-item-price">101 € / nuit</p> 
+                                        <p>Ajouter</p>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="shop-item">
+                                <div class="btn btn-primary shop-item-button" onclick="toast()">
+                                    <p class="shop-item-title">Splendid Hotel</p>
+                                    <img class="shop-item-image" src="https://cf.bstatic.com/images/hotel/max1280x900/184/184115696.jpg" alt="Splendid Hotel">
+                                    <div class="shop-item-details">
+                                        <p class="shop-item-price">130 € / nuit</p> 
+                                        <p>Ajouter</p>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="shop-item">
+                                <div class="btn btn-primary shop-item-button" onclick="toast()">
+                                    <p class="shop-item-title">Carlton Hotel</p>
+                                    <img class="shop-item-image" src="https://cf.bstatic.com/images/hotel/max1280x900/156/156165519.jpg" alt="Best Western Plus Hotel Carlton Annecy">
+                                    <div class="shop-item-details">
+                                        <p class="shop-item-price">87 € / nuit</p> 
+                                        <p>Ajouter</p>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="shop-item">
+                                <div class="btn btn-primary shop-item-button" onclick="toast()">
+                                    <p class="shop-item-title">Les Tresoms Lake</p>
+                                    <img class="shop-item-image" src="https://cf.bstatic.com/images/hotel/max1280x900/647/64759887.jpg" alt="Les Tresoms Lake and Spa Resort">
+                                    <div class="shop-item-details">
+                                        <p class="shop-item-price">87 € / nuit</p> 
+                                        <p>Ajouter</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                    <div id="blocGite" class="displayHebergement">
+                        <div class="hebergement">
+                        
+                            <div class="shop-items">
+                                <div class="shop-item">
+                                    <div class="btn btn-primary shop-item-button" onclick="toast()">
+                                        <p class="shop-item-title">Gîte Echarvines</p>
+                                        <img class="shop-item-image" src="https://www.gites-de-france.com/sites/default/files/styles/v2_width_1140/public/images/371711/371711-0_275011_191b1e0f4312da8c49bcbb9a2903f52a.jpg?itok=bpZ2a8d0" alt="Gîte Echarvines">
+                                        <div class="shop-item-details">   
+                                            <p class="shop-item-price">87 € / nuit</p> 
+                                            <p>Ajouter</p>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="shop-item">
+                                    <div class="btn btn-primary shop-item-button" onclick="toast()">
+                                    <p class="shop-item-title">Gîte du Brocolin</p>
+                                    <img class="shop-item-image" src="https://www.gites-de-france.com/sites/default/files/styles/v2_width_1558/public/images/370970/370970-0_127005_dc43bbbc77296f773ed0124ee0954086.jpg?itok=QPBrZhWo" alt="Gîte du Brocolin">
+                                    <div class="shop-item-details">
+                                        <p class="shop-item-price">78 € / nuit</p> 
+                                            <p>Ajouter</p>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="shop-item">
+                                    <div class="btn btn-primary shop-item-button" onclick="toast()">
+                                        <p class="shop-item-title">Gîte Le Birlou</p>
+                                        <img class="shop-item-image" src="https://www.gites-de-france.com/sites/default/files/styles/v2_width_1558/public/images/370906/370906-0_103024_80828f2bffcf5f151c9569b46a8e6dd6.jpg?itok=1H1nC979" alt="Gîte Le Birlou">
+                                        <div class="shop-item-details">
+                                            <p class="shop-item-price">112 € / nuit</p> 
+                                            <p>Ajouter</p>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="shop-item">
+                                    <div class="btn btn-primary shop-item-button" onclick="toast()">
+                                        <p class="shop-item-title">Gîte Le Home des Neiges</p>
+                                        <img class="shop-item-image" src="https://www.gites-de-france.com/sites/default/files/styles/v2_width_1140/public/images/371930/371930-0_33042_d15957c301d8bddd8523825883a28059.jpg?itok=pDmuk2a8" alt="Gîte Le Home des Neiges">
+                                        <div class="shop-item-details">
+                                            <p class="shop-item-price">89 € / nuit</p> 
+                                            <p>Ajouter</p>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="shop-item">
+                                    <div class="btn btn-primary shop-item-button" onclick="toast()">
+                                        <p class="shop-item-title">Gîte Le Manant</p>
+                                        <img class="shop-item-image" src="https://www.gites-de-france.com/sites/default/files/styles/v2_width_1558/public/images/371770/371770-0_280039_fa9681907c2f2664498648a24451337f.jpg?itok=NbH5LO5V" alt="Gîte Le Manant">
+                                        <div class="shop-item-details">
+                                            <p class="shop-item-price">84 € / nuit</p> 
+                                            <p>Ajouter</p>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="shop-item">
+                                    <div class="btn btn-primary shop-item-button" onclick="toast()">
+                                        <p class="shop-item-title">Gîte Le 1590</p>
+                                        <img class="shop-item-image" src="https://www.gites-de-france.com/sites/default/files/styles/v2_width_1140/public/images/371552/371552-0_256025_ac4bb07e0e37c0ae5279f94bb71dc37a.jpg?itok=8qYnljO2" alt="Gîte Le 1590">
+                                        <div class="shop-item-details">
+                                            <p class="shop-item-price">108 € / nuit</p> 
+                                            <p>Ajouter</p>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                    <div id="blocAppartement" class="displayHebergement">
+                        <div class="hebergement">
+                        
+                            <div class="shop-items">
+                                <div class="shop-item">
+                                    <div class="btn btn-primary shop-item-button" onclick="toast()">
+                                        <p class="shop-item-title">Chaleureux Studio</p>
+                                        <img class="shop-item-image" src="https://a0.muscache.com/im/pictures/67ade120-740a-4646-b756-efe4851809b1.jpg?im_w=960" alt="Chaleureux Studio">
+                                        <div class="shop-item-details">   
+                                            <p class="shop-item-price">75 € / nuit</p> 
+                                            <p>Ajouter</p>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="shop-item">
+                                    <div class="btn btn-primary shop-item-button" onclick="toast()">
+                                    <p class="shop-item-title">Appartement Tournette</p>
+                                    <img class="shop-item-image" src="https://a0.muscache.com/im/pictures/104239513/9f3ae0b6_original.jpg?im_w=960" alt="Appartement Tournette">
+                                    <div class="shop-item-details">
+                                        <p class="shop-item-price">55 € / nuit</p> 
+                                            <p>Ajouter</p>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="shop-item">
+                                    <div class="btn btn-primary shop-item-button" onclick="toast()">
+                                        <p class="shop-item-title">Petit Nid Douillet</p>
+                                        <img class="shop-item-image" src="https://a0.muscache.com/im/pictures/8e0bb826-cfc0-4be4-bfa8-9eccaf05fe3a.jpg?im_w=960" alt="Petit Nid Douillet">
+                                        <div class="shop-item-details">
+                                            <p class="shop-item-price">49 € / nuit</p> 
+                                            <p>Ajouter</p>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="shop-item">
+                                    <div class="btn btn-primary shop-item-button" onclick="toast()">
+                                        <p class="shop-item-title">Joli Studio</p>
+                                        <img class="shop-item-image" src="https://a0.muscache.com/im/pictures/30a50242-e64c-4981-a86e-f000f9ed731b.jpg?im_w=1200" alt="Joli Studio">
+                                        <div class="shop-item-details">
+                                            <p class="shop-item-price">52 € / nuit</p> 
+                                            <p>Ajouter</p>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="shop-item">
+                                    <div class="btn btn-primary shop-item-button" onclick="toast()">
+                                        <p class="shop-item-title">Aparthotel Adagio Annecy</p>
+                                        <img class="shop-item-image" src="https://cf.bstatic.com/images/hotel/max1280x900/252/252001884.jpg" alt="Aparthotel Adagio Annecy">
+                                        <div class="shop-item-details">
+                                            <p class="shop-item-price">90 € / nuit</p> 
+                                            <p>Ajouter</p>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="shop-item">
+                                    <div class="btn btn-primary shop-item-button" onclick="toast()">
+                                        <p class="shop-item-title">Studio avec jardin</p>
+                                        <img class="shop-item-image" src="https://a0.muscache.com/im/pictures/bbd4315f-b714-4e7b-9c6e-48b6e3c4f748.jpg?im_w=960" alt="Studio avec jardin">
+                                        <div class="shop-item-details">
+                                            <p class="shop-item-price">64 € / nuit</p> 
+                                            <p>Ajouter</p>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                    <div id="blocCamping" class="displayHebergement">
+                        <div class="hebergement">
+                        
+                            <div class="shop-items">
+                                <div class="shop-item">
+                                    <div class="btn btn-primary shop-item-button" onclick="toast()">
+                                        <p class="shop-item-title">Camping Le Cretoux</p>
+                                        <img class="shop-item-image" src="https://www.campingfrance.com/asset/cms/700x455/153820/config/106801/image.jpg" alt="Camping Le Cretoux">
+                                        <div class="shop-item-details">   
+                                            <p class="shop-item-price">47 € / nuit</p> 
+                                            <p>Ajouter</p>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="shop-item">
+                                    <div class="btn btn-primary shop-item-button" onclick="toast()">
+                                    <p class="shop-item-title">Camping La Ravoire</p>
+                                    <img class="shop-item-image" src="https://www.campingfrance.com/asset/cms/700x455/157976/config/110091/image.jpg" alt="Camping La Ravoire">
+                                    <div class="shop-item-details">
+                                        <p class="shop-item-price">52 € / nuit</p> 
+                                            <p>Ajouter</p>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="shop-item">
+                                    <div class="btn btn-primary shop-item-button" onclick="toast()">
+                                        <p class="shop-item-title">Camping La Nubliere</p>
+                                        <img class="shop-item-image" src="https://www.campingfrance.com/asset/cms/700x455/144890/config/98946/image.jpg" alt="Camping La Nubliere">
+                                        <div class="shop-item-details">
+                                            <p class="shop-item-price">52 € / nuit</p> 
+                                            <p>Ajouter</p>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="shop-item">
+                                    <div class="btn btn-primary shop-item-button" onclick="toast()">
+                                        <p class="shop-item-title">Camping Le Familial</p>
+                                        <img class="shop-item-image" src="https://www.campingfrance.com/asset/cms/700x455/153195/config/106317/image.jpg" alt="Camping Le Familial">
+                                        <div class="shop-item-details">
+                                            <p class="shop-item-price">58 € / nuit</p> 
+                                            <p>Ajouter</p>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="shop-item">
+                                    <div class="btn btn-primary shop-item-button" onclick="toast()">
+                                        <p class="shop-item-title">Camping L'Idéal</p>
+                                        <img class="shop-item-image" src="https://www.campingfrance.com/asset/cms/700x455/153847/config/106820/image.jpg" alt="Camping L'Idéal">
+                                        <div class="shop-item-details">
+                                            <p class="shop-item-price">49 € / nuit</p> 
+                                            <p>Ajouter</p>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="shop-item">
+                                    <div class="btn btn-primary shop-item-button" onclick="toast()">
+                                        <p class="shop-item-title">Camping Les Fontaines</p>
+                                        <img class="shop-item-image" src="https://www.campingfrance.com/asset/cms/700x455/157985/config/110100/image.jpg" alt="Camping Les Fontaines">
+                                        <div class="shop-item-details">
+                                            <p class="shop-item-price">63 € / nuit</p> 
+                                            <p>Ajouter</p>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div id="snackbar">Ajouté au panier</div>
+            </section>
+    
+            <section id="informations">
+                <h2 class="section-header">5 - Je saisis mes informations</h2>
+                <div class="line"></div>
+                <form>
+                    <label for="nom"></label>
+                    <input type="text" name="" id="nom" placeholder="Nom">
+
+                    <label for="prenom"></label>
+                    <input type="text" name="" id="prenom" placeholder="Prénom">
+
+                    <label for="email"></label>
+                    <input type="email" name="" id="email" placeholder="Adresse mail">
+                    
+                    <label for="tel"></label>
+                    <input type="tel" name="" id="tel" pattern="^[0-9]{10}$" placeholder="Téléphone">
+
+                    <label for="adresse"></label>
+                    <input type="text" name="" id="adresse" placeholder="Adresse">
+
+                    <label for="code_postal"></label>
+                    <input type="text" name="code_postal" id="code_postal" maxlength="5" placeholder="Code Postal">
+
+                </form>
+
+                <div>
+                    <p id="conditions">En cliquant sur 'Réserver', vous acceptez les conditions générales de ventes.</p>
+                </div>
+                
+
+                <span id="noneResponsive" class="btn btn-primary btn-purchase" type="button">Réserver</span>   
+            </section> 
+         </section>
+
+        <aside class="aside-inner container content-section" id="reservation">
+            <h2 class="section-header">Récapitulatif</h2>
+            <div class="line"></div>
+            <div id="jour">
+                <label for="nbJour">Nombre de jours :</label>
+                <input type="text" id="nbJour" value="0" onChange="UpdateFieldNbJours"></input>
+            </div>
+            <div class="cart-row">
+                <span class="cart-item cart-header cart-column">Article</span>
+                <span class="cart-price cart-header cart-column">Prix Unitaire</span>
+                <span class="cart-quantity cart-header cart-column">Quantité</span>
+            </div>
+            
+            <div class="cart-items">
+            </div>
+
+            <div class="cart-total">
+                <strong class="cart-total-title">Total </strong>
+                <span class="cart-total-price">0 €</span>
+            </div>
+     
+        </aside>
+        
+    </main> 
+
+{# <!-- ****************************************************************--> #}
+    <footer>
+        <section id="infosFooter">
+            <div>
+                <p><a id="buttoncontact" href="#contact">Contactez-nous</a></p>
+                <p><a href="faq.html">FAQ</a></p>
+                <p><a href="mentions.html">Mentions légales</a></p>
+            </div>
+            <div id="adresse">
+                <h3>Adresse</h3>
+                <p>8 rue de Rivoli 75004 Paris</p>
+                <a class="reseaux" href="https://fr-fr.facebook.com/" target="_blank"><i class="fab fa-facebook-f"></i></a>
+                <a class="reseaux" href="https://www.instagram.com/?hl=fr/" target="_blank"><i class="fab fa-instagram"></i></a>
+                <a class="reseaux" href="https://twitter.com/?lang=fr" target="_blank"><i class="fab fa-twitter-square"></i></a>
+            </div>
+        </section>
+        <section id="contact">
+            <div class="forum">
+                <i id="close" class='fas fa-times'></i>
+                <h2 class="titre">Contactez-nous</h2>
+                <form>
+                    <p><input type="text" name="your-name" size="40" placeholder="Votre prénom, nom"></p>
+                    <p><input type="email" name="your-mail" size="40" placeholder="Votre e-mail"></p>
+                    <p><textarea name="your-message" cols="40" rows="10" placeholder="Votre message"></textarea></p>
+                    <p><input type="submit" value="Envoyer"></p>
+                </form>
+            </div>
+        </section>
+        <section id="copyright">
+            <p>Copyright © 2020 - Tous droits réservés</p>
+        </section>
+    </footer>
+        {# <!-- ************** Panier Responsive **********  --> #}
+
+    <section id="panierRes">
+
+        <div class="cart-total">
+            <strong class="cart-total-title">Total </strong>
+            <span class="cart-total-price">0 €</span>
+        </div>
+        <span class="btn btn-primary btn-purchase" type="button">Réserver</span>
+        <i class="fas fa-chevron-down" id="arrow"></i>
+        <div id="panierCache">
+            <div class="cart-row">
+                <span class="cart-item cart-header cart-column">Article</span>
+                <span class="cart-price cart-header cart-column">Prix Unitaire</span>
+                <span class="cart-quantity cart-header cart-column">Quantité</span>
+            </div>
+            
+            <div class="cart-items">
+            </div>
+        </div>
+        
+    </section> 
+    <script src="js/reservations.js"></script>
+    </body>
+</html>
+
+        {% endblock %}
