@@ -1,42 +1,48 @@
-{% extends 'base.html.twig' %}
+{% extends "_template.html.twig" %}
 
-{% block title %}Log in!{% endblock %}
+{% block title %}
+    Connexion
+{% endblock %}
 
-{% block body %}
-<form method="post">
-    {% if error %}
-        <div class="alert alert-danger">{{ error.messageKey|trans(error.messageData, 'security') }}</div>
-    {% endif %}
+{% block content %}
+    <div class="columns is-centered section">
+        <div class="column is-one-third box">
+            <h1 class="title has-text-primary has-text-centered">Connexion</h1>
 
-    {% if app.user %}
-        <div class="mb-3">
-            You are logged in as {{ app.user.username }}, <a href="{{ path('app_logout') }}">Logout</a>
+            {# si l'utilisateur est déjà connecté #}
+            {% if app.user %}
+                <div class="notification is-info">
+                    Vous êtes connecté en tant que {{ app.user.username }}, <a href="{{ path('app_logout') }}">Déconnexion</a>
+                </div>
+            {% endif %}
+
+            {# si une erreur survient #}
+            {% if error %}
+                <div class="notification is-danger">{{ error.messageKey|trans(error.messageData, 'security') }}</div>
+            {% endif %}
+
+            {# formulaire de connexion #}
+            <form method="post">
+                <div class="field">
+                    <label class="label" for="inputEmail">Email ou pseudo</label>
+                    <div class="control">
+                        <input class="input" type="text" value="{{ last_username }}" name="username" id="inputEmail" required autofocus>
+                    </div>
+                </div>
+
+                <div class="field">
+                    <label class="label" for="inputPassword">Mot de passe</label>
+                    <div class="control">
+                        <input class="input" type="password" name="password" id="inputPassword" required>
+                    </div>
+                </div>
+
+                {# un champ caché pour la protection des failles CSRF #}
+                <input type="hidden" name="_csrf_token" value="{{ csrf_token('authenticate') }}">
+                <button class="button is-primary is-fullwidth" type="submit">
+                    Connexion
+                </button>
+            </form>
         </div>
-    {% endif %}
-
-    <h1 class="h3 mb-3 font-weight-normal">Please sign in</h1>
-    <label for="inputEmail">Email</label>
-    <input type="email" value="{{ last_username }}" name="email" id="inputEmail" class="form-control" required autofocus>
-    <label for="inputPassword">Password</label>
-    <input type="password" name="password" id="inputPassword" class="form-control" required>
-
-    <input type="hidden" name="_csrf_token"
-           value="{{ csrf_token('authenticate') }}"
-    >
-
-    {#
-        Uncomment this section and add a remember_me option below your firewall to activate remember me functionality.
-        See https://symfony.com/doc/current/security/remember_me.html
-
-        <div class="checkbox mb-3">
-            <label>
-                <input type="checkbox" name="_remember_me"> Remember me
-            </label>
-        </div>
-    #}
-
-    <button class="btn btn-lg btn-primary" type="submit">
-        Sign in
-    </button>
-</form>
+    </div>
 {% endblock %}

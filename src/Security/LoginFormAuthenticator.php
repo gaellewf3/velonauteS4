@@ -60,8 +60,18 @@ class LoginFormAuthenticator extends AbstractFormLoginAuthenticator implements P
         return $credentials;
     }
 
+
+
+/**
+     * 3. Récupérer l'utilisateur depuis la base de données
+     */
+
+
     public function getUser($credentials, UserProviderInterface $userProvider)
     {
+
+        // Vérification du jeton CSRF
+
         $token = new CsrfToken('authenticate', $credentials['csrf_token']);
         if (!$this->csrfTokenManager->isTokenValid($token)) {
             throw new InvalidCsrfTokenException();
@@ -77,6 +87,10 @@ class LoginFormAuthenticator extends AbstractFormLoginAuthenticator implements P
         return $user;
     }
 
+        /**
+     * 4. Vérifier le mot de passe de l'utilisateur
+     */
+
     public function checkCredentials($credentials, UserInterface $user)
     {
         return $this->passwordEncoder->isPasswordValid($user, $credentials['password']);
@@ -90,6 +104,11 @@ class LoginFormAuthenticator extends AbstractFormLoginAuthenticator implements P
         return $credentials['password'];
     }
 
+
+        /**
+     * 5. Après avoir été connecté, rediriger l'utilisateur.
+     */
+    
     public function onAuthenticationSuccess(Request $request, TokenInterface $token, $providerKey)
     {
         if ($targetPath = $this->getTargetPath($request->getSession(), $providerKey)) {
