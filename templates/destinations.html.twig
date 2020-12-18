@@ -1,0 +1,72 @@
+{% extends "base.html.twig" %}
+
+    {% block body %}
+            
+    {# <!--------- DESTINATIONS ------------ --> #}
+
+
+    <div id="containerDestination">
+
+        <h1>Nos destinations</h1>
+        <h2>Retrouvez les terroirs, la culture et la gastronomie de nos régions grâce aux itinéraires du Vélonaute.</h2>
+
+        <!-- Présentation des destinations -->
+
+        <div id="gallery">
+            <div>
+                <a href="choix-itineraires.html">
+                    <img src="img/destination/chalet.jpg" alt="campagne verdoyante vélo apposé à un châlet">
+                    <p>La Savoie</p>
+                </a>
+            </div>
+
+            <div>
+                <a href="choix-itineraires.html">
+                    <img src="img/destination/nature-matin.jpg" alt="vélo sur une route de campagne">
+                    <p>La Somme</p>
+                </a>
+            </div>
+
+
+            <div>
+                <a href="choix-itineraires.html">
+                    <img src="img/destination/vignes.jpg" alt="vignoble">
+                    <p>La Bourgogne</p>
+                </a>
+            </div>
+
+            <div>
+                <a href="choix-itineraires.html">
+                    <img src="img/destination/nature-velo.jpg" alt="vélo homme en forêt">
+                    <p>Les Landes</p>
+                </a>
+            </div>
+            <div>
+                <a href="choix-itineraires.html">
+                    <img src="img/destination/bretagne.jpg" alt="plage bretonne">
+                    <p>La Bretagne</p>
+                </a>
+            </div>
+
+            <div>
+                <a href="choix-itineraires.html">
+                    <img src="img/destination/vtt.jpeg" alt="vtt forêt ">
+                    <p>La Normandie</p>
+                </a>
+            </div>
+        </div>
+        <!-- Assistance -->
+        <div>
+            <p id="assistance"> VOUS SOUHAITEZ ORGANISER UN VOYAGE SUR-MESURE ?<br> Contactez-nous, notre équipe reste à
+                votre disposition.<br>
+                <a href="#"><i class="fas fa-phone-volume"></i></a>
+                <a href="#"><i class="fas fa-envelope-square"></i></a>
+            </p>
+        </div>
+    </div>
+
+     {% endblock %}
+
+{# <!--------------- Footer --------------------> #}
+
+{% extends "footer.html.twig" %}
