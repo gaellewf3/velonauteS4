@@ -3,6 +3,8 @@
 namespace App\Entity;
 
 use App\Repository\UserRepository;
+use Doctrine\Common\Collections\ArrayCollection;
+use Doctrine\Common\Collections\Collection;
 use Doctrine\ORM\Mapping as ORM;
 use Symfony\Component\Security\Core\User\UserInterface;
 
@@ -38,6 +40,26 @@ class User implements UserInterface
      * @ORM\Column(type="string", length=25)
      */
     private $pseudo;
+
+    /**
+     * @ORM\Column(type="string", length=255)
+     */
+    private $name;
+
+    /**
+     * @ORM\Column(type="string", length=255)
+     */
+    private $nom;
+
+    /**
+     * @ORM\OneToMany(targetEntity=Commandes::class, mappedBy="user")
+     */
+    private $prenom;
+
+    public function __construct()
+    {
+        $this->prenom = new ArrayCollection();
+    }
 
     public function getId(): ?int
     {
@@ -125,6 +147,60 @@ class User implements UserInterface
     public function setPseudo(string $pseudo): self
     {
         $this->pseudo = $pseudo;
+
+        return $this;
+    }
+
+    public function getName(): ?string
+    {
+        return $this->name;
+    }
+
+    public function setName(string $name): self
+    {
+        $this->name = $name;
+
+        return $this;
+    }
+
+    public function getNom(): ?string
+    {
+        return $this->nom;
+    }
+
+    public function setNom(string $nom): self
+    {
+        $this->nom = $nom;
+
+        return $this;
+    }
+
+    /**
+     * @return Collection|Commandes[]
+     */
+    public function getPrenom(): Collection
+    {
+        return $this->prenom;
+    }
+
+    public function addPrenom(Commandes $prenom): self
+    {
+        if (!$this->prenom->contains($prenom)) {
+            $this->prenom[] = $prenom;
+            $prenom->setUser($this);
+        }
+
+        return $this;
+    }
+
+    public function removePrenom(Commandes $prenom): self
+    {
+        if ($this->prenom->removeElement($prenom)) {
+            // set the owning side to null (unless already changed)
+            if ($prenom->getUser() === $this) {
+                $prenom->setUser(null);
+            }
+        }
 
         return $this;
     }

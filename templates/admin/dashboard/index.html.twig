@@ -1,20 +1,38 @@
-{% extends 'base.html.twig' %}
-
-{% block title %}Hello DashboardController!{% endblock %}
-
+{% extends "base.html.twig" %}
 {% block body %}
-<style>
-    .example-wrapper { margin: 1em auto; max-width: 800px; width: 95%; font: 18px/1.5 sans-serif; }
-    .example-wrapper code { background: #F5F5F5; padding: 2px 6px; }
-</style>
-
-<div class="example-wrapper">
-    <h1>Hello {{ controller_name }}! ✅</h1>
-
-    This friendly message is coming from:
-    <ul>
-        <li>Your controller at <code><a href="{{ 'C:/Users/WEBFORCE3/Documents/webforce_cours/SYMFONY/velonauteS4/src/Controller/Admin/DashboardController.php'|file_link(0) }}">src/Controller/Admin/DashboardController.php</a></code></li>
-        <li>Your template at <code><a href="{{ 'C:/Users/WEBFORCE3/Documents/webforce_cours/SYMFONY/velonauteS4/templates/admin/dashboard/index.html.twig'|file_link(0) }}">templates/admin/dashboard/index.html.twig</a></code></li>
-    </ul>
-</div>
+    <nav class="navbar has-background-primary is-dark">
+        <div class="navbar-brand">
+            <a class="navbar-item" href="{{ path('home') }}">
+                <p class="subtitle is-4 has-text-primary">
+                     VELONAUTE 
+                </p>
+            </a>
+            <a role="button" class="navbar-burger burger" aria-label="menu" aria-expanded="false" data-target="navbarBasicExample">
+                <span aria-hidden="true"></span>
+                <span aria-hidden="true"></span>
+                <span aria-hidden="true"></span>
+            </a>
+        </div>
+        <div id="navbarBasicExample" class="navbar-menu">
+            <div class="navbar-start">
+                <a class="navbar-item" href="{{ path('admin_dashboard') }}">
+                    Accueil
+                </a>
+            </div>
+            <div class="navbar-end">
+                <div class="navbar-item">
+                    <div class="buttons">
+                        <a class="button is-primary is-small" href="#">
+                            <strong>{{ app.user.pseudo }}</strong>
+                        </a>
+                        <a class="button is-light is-small" href="{{ path('app_logout') }}">
+                            Déconnexion
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </nav>
+    {# Bloc qui contiendra le contenu de chaque page #}
+    {% block content %}{% endblock %}
 {% endblock %}
