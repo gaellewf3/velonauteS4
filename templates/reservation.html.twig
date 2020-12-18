@@ -1,42 +1,7 @@
 
-{% extends "base.html.twig" %}
+{% extends "index.html.twig" %}
 
-
-        {% block body %}
-
-    <body>
-                {# <!------------------------- HEADER --------------------------------> #}
-        <header>
-            <div id="logo">
-                <a href="index.html">
-                <img src="img/logo-officiel.png" alt="logo de site">
-                </a>
-                <h1>Velonaute</h1>
-            </div>
-            <nav>
-                <div id="rechercheConnexion">
-                    <div id="recherche">
-                        <input id="input" type="text" name="Recherche" placeholder="Recherche">
-                        <i class="fas fa-search"></i>
-                        <a href="#" id="connexion">Connexion</a>
-                    </div>
-                </div>
-                <div>
-                    <a href="destinations.html">Destinations</a>
-                    <a href="thematiques.html">Thématiques</a>
-                </div>
-            </nav>
-            <div class="clear"></div>
-            <div id="burger">
-                <i class="fas fa-bars" ></i>
-            </div>
-            <div id="burgerMenu">
-                <a href="#">Connexion</a> 
-                <a href="destinations.html">Destinations</a>
-                <a href="thematiques.html">Thématiques</a>        
-                <a href="#">Contact</a>    
-            </div>
-        </header>
+    {% block body %}
     <main>
         <section id="test">
             {# <!-- ********** CALENDRIER *********** --> #}
@@ -61,7 +26,7 @@
                     <div class="shop-item">
                         <div class="btn btn-primary shop-item-button" onclick="toast()">
                             <p class="shop-item-title">Vélo de Route</p>
-                            <img class="shop-item-image" src="img/reservation/route.jpg" alt="Vélo du route">
+                            <img class="shop-item-image" src="{{ asset('build/images/reservation/route.jpg') }}" alt="Vélo du route">
                             <div class="shop-item-details">    
                                 <p class="shop-item-price">25 € / jour</p> 
                                 <p class="ajouter">Ajouter</p>
@@ -71,7 +36,7 @@
                     <div class="shop-item">
                         <div class="btn btn-primary shop-item-button" onclick="toast()">
                             <p class="shop-item-title">VTT</p>
-                            <img class="shop-item-image" src="img/reservation/vtt.jpg" alt="VTT">
+                            <img class="shop-item-image" src="{{ asset('build/images/reservation/vtt.jpg') }}" alt="VTT">
                             <div class="shop-item-details">    
                                 <p class="shop-item-price">25 € / jour</p> 
                                 <p>Ajouter</p>
@@ -81,7 +46,7 @@
                     <div class="shop-item">
                         <div class="btn btn-primary shop-item-button" onclick="toast()">
                             <p class="shop-item-title">Vélo Électrique</p>
-                            <img class="shop-item-image" src="img/reservation/electrique.jpg" alt="Vélo Électrique">
+                            <img class="shop-item-image" src="{{ asset('build/images/reservation/electrique.jpg') }}" alt="Vélo Électrique">
                             <div class="shop-item-details"> 
                                 <p class="shop-item-price">30 € / jour</p> 
                                 <p>Ajouter</p>
@@ -595,7 +560,7 @@
         </div>
         
     </section> 
-    <script src="js/reservations.js"></script>
+    {# <script src="js/reservations.js"></script> #}
     </body>
 </html>
 

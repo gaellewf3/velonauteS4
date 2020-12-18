@@ -1,63 +1,20 @@
-<!DOCTYPE html>
-<html lang="fr">
-    <head>
-        <title>Itinéraire Bretagne</title> 
-        <meta charset="utf-8">
-        <meta name="author" content="Velonaute-Team">
-        <meta name= "description" content="Le meilleur endroit pour louer votre vélo !">
-        <meta name="viewport" content="width=device-width, initial-scale=1">
-        <link rel="stylesheet" type="text/css" href="../css/style.css">
-        <link href="https://fonts.googleapis.com/css2?family=Sacramento&display=swap" rel="stylesheet">
-        <link href="https://fonts.googleapis.com/css2?family=Nothing+You+Could+Do&display=swap" rel="stylesheet">
-        <script src="https://kit.fontawesome.com/3c7632cea0.js" crossorigin="anonymous"></script>    
-    </head>
 
-    <body>
-                <!------------------------- HEADER -------------------------------->
-        <header>
-            <div id="logo">
-                <a href="../index.html">
-                <img src="../img/logo-officiel.png" alt="logo de site">
-                </a>
-                <h1>Velonaute</h1>
-            </div>
-            <nav>
-                <div id="rechercheConnexion">
-                    <div id="recherche">
-                        <input id="input" type="text" name="Recherche" placeholder="Recherche">
-                        <i class="fas fa-search"></i>
-                        <a href="#" id="connexion">Connexion</a>
-                    </div>
-                </div>
-                <div>
-                    <a href="../destinations.html">Destinations</a>
-                    <a href="../thematiques.html">Thématiques</a>
-                </div>
-            </nav>
-            <div class="clear"></div>
-            <div id="burger">
-                <i class="fas fa-bars" ></i>
-            </div>
-            <div id="burgerMenu">
-                <a href="#">Connexion</a> 
-                <a href="destinations.html">Destinations</a>
-                <a href="thematiques.html">Thématiques</a>        
-                <a href="#">Contact</a>    
-            </div>
-        </header>
+{% extends "index.html.twig" %}
+
+    {% block body %}
 
 		<section class="container" id="itineraire">
 			
 			<div id="photo__bretagne">
 				<p>Bretagne</p>
 
-				<!--------------------- coeur ------------------->
+				{# <!--------------------- coeur -------------------> #}
 				<span  class="coeur">
 					<i class="fas fa-heart" id="coeur" ></i>
 				</span>
 			</div>
 
- 				<!-------------------------- itineraire -------------------------->
+ 				{# <!-------------------------- itineraire --------------------------> #}
 			<article>
 
 				<h4>La Bretagne à vélo, la culture bretonne à portée de pédale </h4>
@@ -88,21 +45,21 @@
 		</section>
 
 
-	<!-----------------rotation -------------------------->
+	{# <!-----------------rotation --------------------------> #}
 	<!-- <center>
 	<section id="rotation">
 			<img src="../img/logo-officiel.png" class="rotate" width="100" height="100" />
 
 	</section>
 	</center> -->
-	<!------------------------------ map --------------------------------->
+	{# <!------------------------------ map ---------------------------------> #}
 	
 			<section class="container" id="map">
 				<img src="../img/map__bretagne.jpg" alt="" class="map">
 			</section>
 
 
-	<!------------------------------ infos pratiques ------------------------>
+	{# <!------------------------------ infos pratiques ------------------------> #}
 
 
 
@@ -129,7 +86,7 @@
 			</section>
 
 
-			<!--------------------------- témoignage ----------------------->
+			{# <!--------------------------- témoignage -----------------------> #}
 
 
 			<section class="container" id="temoignage">  
@@ -160,7 +117,7 @@
 
 			
 			
-			<!---------------------------------- FOOTER ----------------------------->
+			{# <!---------------------------------- FOOTER -----------------------------> #}
 
 
 			<footer>
@@ -198,3 +155,5 @@
 		<script type="text/javascript" src="../js/itineraire.js"></script>
 	</body>
 </html>
+
+        {% endblock %}

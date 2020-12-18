@@ -6,9 +6,10 @@
         <meta name= "description" content="Le meilleur endroit pour louer votre vélo !">
         <meta name="viewport" content="width=device-width, initial-scale=1">  
         <title>{% block title %}Page Réservation{% endblock %}</title>
-        {% block stylesheets %}
-            {# Récupération des balises <link> pour l'entrée "app" de Webpack Encore #}
+        {# Récupération des balises <link> pour l'entrée "app" de Webpack Encore #}
             {{ encore_entry_link_tags('app') }}
+        {% block stylesheets %}
+            
 
             {# <link href="https://fonts.googleapis.com/css2?family=Sacramento&display=swap" rel="stylesheet">
             <link href="https://fonts.googleapis.com/css2?family=Nothing+You+Could+Do&display=swap" rel="stylesheet">
@@ -21,14 +22,9 @@
             <p>Hello World</p>
             
         {% endblock %}
-        {% block javascripts %}
-
-            {# Récupération des balises <script> pour l'entrée "app" de Webpack Encore #}
+        {# Récupération des balises <script> pour l'entrée "app" de Webpack Encore #}
             {{ encore_entry_script_tags('app') }}
-
+        {% block javascripts %}
         {% endblock %}
-
-
-
     </body>
 </html>
