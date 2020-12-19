@@ -52,7 +52,7 @@ body {
 
 /*HEADER*/
 
-header {
+/* header {
     width: 100%;
     background-color: #0E672C;
     align-items: center;
@@ -88,7 +88,7 @@ header nav a {
 
 header nav a:hover {
     color: #61af76;
-}
+} */
 
 #logo {
     float: left;

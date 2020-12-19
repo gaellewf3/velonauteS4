@@ -1,55 +1,90 @@
 
+
+            {# Menu qui sera affiché sur toutes les pages du Front-Office #}
+{# On indique de quel template on hérite.
+   Le chemin est à indiquer depuis le répertoire racine des templates (templates/) #}
 {% extends "base.html.twig" %}
 
-        {% block body %}
-{# <!DOCTYPE html>
-<html lang="fr">
-    <head>
-        <title>Velonaute</title> 
-        <meta charset="utf-8">
-        <meta name="author" content="Velonaute-Team">
-        <meta name= "description" content="Le meilleur endroit pour louer votre vélo !">
-        <meta name="viewport" content="width=device-width, initial-scale=1">
-        <link rel="stylesheet" type="text/css" href="css/style.css">
-        <link href="https://fonts.googleapis.com/css2?family=Sacramento&display=swap" rel="stylesheet">
-        <link href="https://fonts.googleapis.com/css2?family=Nothing+You+Could+Do&display=swap" rel="stylesheet">
-        <script src="https://kit.fontawesome.com/3c7632cea0.js" crossorigin="anonymous"></script>
-        <script id="mcjs">!function(c,h,i,m,p){m=c.createElement(h),p=c.getElementsByTagName(h)[0],m.async=1,m.src=i,p.parentNode.insertBefore(m,p)}(document,"script","https://chimpstatic.com/mcjs-connected/js/users/7c80618d521a687de456d16b2/3ebcd3c06ccdffadda7a82acf.js");</script> 
-    </head> #}
+{# On déclare les blocs dont on souhaite écraser le contenu.
+   Les autres blocs garderont le contenu indiqué dans le template parent #}
+{% block body %}
 
-    <body>
-                {# <!------------------------- HEADER --------------------------------> #}
-        <header>
-            <div id="logo">
-                <a href="{{ path('home') }}">
+    {# Menu qui sera affiché sur toutes les pages du Front-Office #}
+
+    <nav class="navbar is-success">
+        <div class="navbar-brand">
+            <a class="navbar-item" href="{{ path('home') }}">
                 <img src="{{ asset('build/images/logo-officiel.png') }}" alt="logo de site">
-                </a>
                 <h1>Velonaute</h1>
+            </a>
+            
+
+            <a role="button" class="navbar-burger burger" aria-label="menu" aria-expanded="false" data-target="navbarBasicExample">
+                <span aria-hidden="true"></span>
+                <span aria-hidden="true"></span>
+                <span aria-hidden="true"></span>
+            </a>
+        </div>
+
+        <div id="navbarBasicExample" class="navbar-menu">
+            <div class="navbar-start">
+                <a class="navbar-item" href="#">
+                    Destinations
+                </a>
+
+                <a class="navbar-item" href="#">
+                    Thématiques
+                </a>
             </div>
-            <nav>
-                <div id="rechercheConnexion">
-                    <div id="recherche">
-                        <input id="input" type="text" name="Recherche" placeholder="Recherche">
-                        <i class="fas fa-search"></i>
-                        <a href="#" id="connexion">Connexion</a>
+
+            <div class="navbar-end">
+                <div class="navbar-item">
+                    <div class="buttons">
+                        {% if app.user %}
+                            <a class="button is-success is-light is-small" href="#">
+                                <strong>{{ app.user.pseudo }}</strong>
+                            </a>
+                            <a class="button is-light is-small" href="#">
+                                Déconnexion
+                            </a>
+                        {% else %}
+                        <a class="button is-success is-light is-small" href="#">
+                            <strong>Inscription</strong>
+                        </a>
+                        <a class="button is-success is-light is-small" href="#" title="Connexion">
+                            <i class="fas fa-user"></i>
+                        </a>
+                        {% endif %}
+
+                        {% if is_granted('ROLE_EDITOR') %}
+                            <a class="button is-success is-light is-small" href="#">
+                            <strong>Back Office</strong>
+                        </a>
+                        {% endif %}
                     </div>
                 </div>
-                <div>
-                    <a href="destinations.html">Destinations</a>
-                    <a href="thematiques.html">Thématiques</a>
-                </div>
-            </nav>
-            <div class="clear"></div>
-            <div id="burger">
-                <i class="fas fa-bars" ></i>
+
+                <a class="navbar-item">
+                    <form action="#">
+                        <div class="field has-addons">
+                            <div class="control is-expanded">
+                                <input name="query" type="text" class="input is-small" placeholder="Recherche ..." required>
+                            </div>
+                            <div class="control">
+                                <button type="submit" class="button is-success is-light is-small">
+                                    <i class="fas fa-search"></i>
+                                </button>
+                            </div>
+                        </div>
+                    </form>
+                </a>
             </div>
-            <div id="burgerMenu">
-                <a href="#">Connexion</a> 
-                <a href="destinations.html">Destinations</a>
-                <a href="thematiques.html">Thématiques</a>        
-                <a href="#">Contact</a>    
-            </div>
-        </header>
+        </div>
+    </nav>
+    {# Bloc qui contiendra le contenu de chaque page #}
+    {% block content %}{% endblock %}
+
+
                 {# <!--------------------------- Cookies------------------------------> #}
         {# <div id="cookies">
             <p>En cliquant sur ”J’accepte”, vous acceptez l’utilisation des cookies. <br>
@@ -138,6 +173,5 @@
         </footer>
 
 	    <script src="script.js"></script>
-    </body>
-</html>
+
         {% endblock %}

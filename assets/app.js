@@ -11,3 +11,5 @@ require('./app.scss');
 //Récupération des fichiers JS 
 // require('./js/reservation.js'); 
 
+//  Récupération du script du menu mobile
+require('./menu.js');
