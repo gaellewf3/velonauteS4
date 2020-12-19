@@ -1,6 +1,6 @@
-{% extends "base.html.twig" %}
+{% extends "_template.html.twig" %}
 
-    {% block body %}
+{% block content %}
 
     {# <!-- <--------------------THEMATIQUE--------------------------> #}
 
@@ -22,7 +22,7 @@
 
             <div>
                 <a href="choix-itineraires.html">
-                    <img src="{{ asset('build/images/thematique/vtt.jpg') }}" alt="Vtt en forêt">
+                    <img src="{{ asset('build/images/thematique/vtt.jpeg') }}" alt="Vtt en forêt">
                     <p>VTT</p>
                 </a>
             </div>
@@ -68,8 +68,4 @@
 
     </div>
 
-    {% endblock %}
-
-{# <!--------------- Footer --------------------> #}
-
-{% extends "footer.html.twig" %}
+{% endblock %}
