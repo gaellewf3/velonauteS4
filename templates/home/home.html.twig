@@ -1,88 +1,8 @@
-
-
-            {# Menu qui sera affiché sur toutes les pages du Front-Office #}
+{% extends "_template.html.twig" %}
+{# Menu qui sera affiché sur toutes les pages du Front-Office #}
 {# On indique de quel template on hérite.
    Le chemin est à indiquer depuis le répertoire racine des templates (templates/) #}
-{% extends "base.html.twig" %}
-
-{# On déclare les blocs dont on souhaite écraser le contenu.
-   Les autres blocs garderont le contenu indiqué dans le template parent #}
-{% block body %}
-
-    {# Menu qui sera affiché sur toutes les pages du Front-Office #}
-
-    <nav class="navbar is-success">
-        <div class="navbar-brand">
-            <a class="navbar-item" href="{{ path('home') }}">
-                <img src="{{ asset('build/images/logo-officiel.png') }}" alt="logo de site">
-                <h1>Velonaute</h1>
-            </a>
-            
-
-            <a role="button" class="navbar-burger burger" aria-label="menu" aria-expanded="false" data-target="navbarBasicExample">
-                <span aria-hidden="true"></span>
-                <span aria-hidden="true"></span>
-                <span aria-hidden="true"></span>
-            </a>
-        </div>
-
-        <div id="navbarBasicExample" class="navbar-menu">
-            <div class="navbar-start">
-                <a class="navbar-item" href="#">
-                    Destinations
-                </a>
-
-                <a class="navbar-item" href="#">
-                    Thématiques
-                </a>
-            </div>
-
-            <div class="navbar-end">
-                <div class="navbar-item">
-                    <div class="buttons">
-                        {% if app.user %}
-                            <a class="button is-success is-light is-small" href="#">
-                                <strong>{{ app.user.pseudo }}</strong>
-                            </a>
-                            <a class="button is-light is-small" href="#">
-                                Déconnexion
-                            </a>
-                        {% else %}
-                        <a class="button is-success is-light is-small" href="#">
-                            <strong>Inscription</strong>
-                        </a>
-                        <a class="button is-success is-light is-small" href="#" title="Connexion">
-                            <i class="fas fa-user"></i>
-                        </a>
-                        {% endif %}
-
-                        {% if is_granted('ROLE_EDITOR') %}
-                            <a class="button is-success is-light is-small" href="#">
-                            <strong>Back Office</strong>
-                        </a>
-                        {% endif %}
-                    </div>
-                </div>
-
-                <a class="navbar-item">
-                    <form action="#">
-                        <div class="field has-addons">
-                            <div class="control is-expanded">
-                                <input name="query" type="text" class="input is-small" placeholder="Recherche ..." required>
-                            </div>
-                            <div class="control">
-                                <button type="submit" class="button is-success is-light is-small">
-                                    <i class="fas fa-search"></i>
-                                </button>
-                            </div>
-                        </div>
-                    </form>
-                </a>
-            </div>
-        </div>
-    </nav>
-    {# Bloc qui contiendra le contenu de chaque page #}
-    {% block content %}{% endblock %}
+{% block content %}
 
 
                 {# <!--------------------------- Cookies------------------------------> #}
@@ -174,4 +94,4 @@
 
 	    <script src="script.js"></script>
 
-        {% endblock %}
+{% endblock %}
