@@ -7,7 +7,7 @@
 {% block content %}
     <div class="columns is-centered section">
         <div class="column is-one-third box">
-            <h1 class="title has-text-primary has-text-centered">Connexion</h1>
+            <h1 class="title has-text-success has-text-centered">Connexion</h1>
 
             {# si l'utilisateur est déjà connecté #}
             {% if app.user %}
@@ -39,7 +39,7 @@
 
                 {# un champ caché pour la protection des failles CSRF #}
                 <input type="hidden" name="_csrf_token" value="{{ csrf_token('authenticate') }}">
-                <button class="button is-primary is-fullwidth" type="submit">
+                <button class="button is-success is-fullwidth" type="submit">
                     Connexion
                 </button>
             </form>
