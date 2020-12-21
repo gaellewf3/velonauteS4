@@ -19,20 +19,20 @@ class DashboardController extends AbstractController
         return $this->render('admin/dashboard/index.html.twig');
     }
 
-    /**
-     * Ajouter un user
-     * @Route("/user/new", name="user_add")
-     */
-    public function userAdd(Request $request, EntityManagerInterface $manager)
+    // /**
+    //  * Ajouter un user
+    //  * @Route("/user/new", name="user_add")
+    //  */
+    // public function userAdd(Request $request, EntityManagerInterface $manager)
 
-    $form = $this->createForm(UserFormType::class);
-    $form->handleRequest($request);
+    // $form = $this->createForm(UserFormType::class);
+    // $form->handleRequest($request);
 
-    if ($form->isSubmitted() && $form->isValid()
-    ) {
-        $user = $form->getData();
+    // if ($form->isSubmitted() && $form->isValid()
+    // ) {
+    //     $user = $form->getData();
 
-        $manager->persist($user);
-        $manager->flush();
-    }
+    //     $manager->persist($user);
+    //     $manager->flush();
+    // }
 }
