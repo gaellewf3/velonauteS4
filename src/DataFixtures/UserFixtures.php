@@ -25,6 +25,6 @@ class UserFixtures extends Fixture
             $user,
             'the_new_password'
         ));
-
+        
     }
 }
