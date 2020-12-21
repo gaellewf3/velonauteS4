@@ -21,10 +21,13 @@ class UserFixtures extends Fixture
         // $product = new Product();
         // $manager->persist($product);
         $user = new User();
-        $user ->setPassword($this->encoder->encodePassword(
-            $user,
-            'the_new_password'
-        ));
-        
+        $user 
+            ->setEmail('admin1'. '@velonaute.fr')
+            ->setRoles(['ROLE_ADMIN'])
+            ->setPassword($this->encoder->encodePassword($user, 'admin1'))
+            ->setPseudo('admin')
+        ;
+        $manager->persist($user);
+        $manager->flush();
     }
 }
