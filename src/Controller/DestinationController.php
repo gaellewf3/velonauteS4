@@ -17,4 +17,6 @@ class DestinationController extends AbstractController
             'controller_name' => 'DestinationController',
         ]);
     }
-}
+
+    }
+

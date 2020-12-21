@@ -1,0 +1,91 @@
+
+{% extends "index.html.twig" %}
+
+    {% block body %}
+
+	<section class="container" id="itineraire">
+
+		<div id="photo__savoie">
+		
+			   
+			   	<p>{{ itineraire.region }}</p>
+
+			{# <!--------------------- coeur -------------------> #}
+			<span class="coeur">
+				<i class="fas fa-heart" id="coeur"></i>
+			</span>
+			{# <!--------------------- coeur -------------------> #}
+		</div>
+
+		<article>
+			<h4>{{ itineraire.nom }}</h4>
+
+		            <p>{{ itineraire.description }}</p>
+
+
+				<div>
+					<div class="partageRS">
+						<p>Partagez sur les réseaux sociaux :</p>
+						<a target="_blank" title="Facebook" href="https://cutt.ly/EgfJO3C" 
+						rel="nofollow" onclick="javascript:window.open(this.href, '', 'menubar=no,toolbar=no,resizable=yes,scrollbars=yes,height=500,width=700');return false;"><img src="../img/facebook_icon.png" alt="Facebook" /></a>
+			
+						<a target="_blank" title="Twitter" href="https://twitter.com/share?url=https://bit.ly/2sI7H3v" 
+						rel="nofollow" onclick="javascript:window.open(this.href, '', 'menubar=no,toolbar=no,resizable=yes,scrollbars=yes,height=400,width=700');return false;"><img src="../img/twitter_icon.png" alt="Twitter" /></a>
+					</div>
+					
+					<div class="reservation">
+						<p class="price">Dès 105 €</p>
+						<a href="../reservations.html">Je réserve</a>
+					</div>
+				</div>
+
+			<div class="clear"></div>
+		</article>
+	</section>
+
+
+	<section class="container" id="map__savoie">
+		<img src="{{ asset('build/images/map__savoie.jpg') }}" alt="" class="map">
+	</section>
+
+
+	<section class="container" id="infos">
+		<article>
+			<p class="infosPratiques">Informations Pratiques</p>		
+            <p>{{ itineraire.informations}}</p>
+
+		</article>
+	</section>
+
+	{# <!---------------------------témoignages -------------------------> #}
+
+	<section class="container" id="temoignage">
+
+		<figure class="snip1192">
+			<blockquote>Super expérience lors de notre parcours ! De superbe points de vue, je recommande ce trajet,
+				entre amis ou en famille.
+			</blockquote>
+			<div class="author">
+				<img src="{{ asset('build/images/visage1.jpeg') }}" alt="temoignage1" />
+				<h5>John Maus <span> Velo'novice</span></h5>
+			</div>
+		</figure>
+		<figure class="snip1192 hover">
+			<blockquote>Enfin un site où tout est compris. Tout est planifié, il n’y a qu’à se laisser guider et admirer
+				les paysages</blockquote>
+			<div class="author">
+				<img src="{{ asset('build/images/visage2.jpeg') }}" alt="temoignage2" />
+				<h5>Catherine<span> Velo'nomade</span></h5>
+			</div>
+		</figure>
+		<figure class="snip1192">
+			<blockquote> Parcours accesible pour toute la famille ! Avec ses super pauses gourmandes, il y en a pour
+				tous les goûts.</blockquote>
+			<div class="author">
+				<img src="{{ asset('build/images/visage3.jpeg') }}" alt="temoignage3" />
+				<h5>Eleonore<span> Velo'novice</span></h5>
+			</div>
+		</figure>
+	</section>
+
+        {% endblock %}

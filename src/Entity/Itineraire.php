@@ -27,6 +27,16 @@ class Itineraire
      */
     private $nom;
 
+    /**
+     * @ORM\Column(type="string", length=2000)
+     */
+    private $description;
+
+    /**
+     * @ORM\Column(type="string", length=2000)
+     */
+    private $informations;
+
     public function getId(): ?int
     {
         return $this->id;
@@ -52,6 +62,30 @@ class Itineraire
     public function setNom(string $nom): self
     {
         $this->nom = $nom;
+
+        return $this;
+    }
+
+    public function getDescription(): ?string
+    {
+        return $this->description;
+    }
+
+    public function setDescription(string $description): self
+    {
+        $this->description = $description;
+
+        return $this;
+    }
+
+    public function getInformations(): ?string
+    {
+        return $this->informations;
+    }
+
+    public function setInformations(string $informations): self
+    {
+        $this->informations = $informations;
 
         return $this;
     }
