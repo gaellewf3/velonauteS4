@@ -28,7 +28,8 @@ class Commandes
     private $statut_paiement;
 
     /**
-     * @ORM\ManyToOne(targetEntity=User::class, inversedBy="prenom")
+     * @ORM\ManyToOne(targetEntity=User::class, inversedBy="commandes")
+     * @ORM\JoinColumn(nullable=false)
      */
     private $user;
 

@@ -1,9 +1,9 @@
-{% extends "base.html.twig" %}
+{% extends "_template.html.twig" %}
 {% block body %}
     <nav class="navbar has-background-primary is-dark">
         <div class="navbar-brand">
             <a class="navbar-item" href="{{ path('home') }}">
-                <p class="subtitle is-4 has-text-primary">
+                <p class="subtitle is-4 has-text-success">
                      VELONAUTE 
                 </p>
             </a>
@@ -25,7 +25,7 @@
                         <a class="button is-primary is-small" href="#">
                             <strong>{{ app.user.pseudo }}</strong>
                         </a>
-                        <a class="button is-light is-small" href="{{ path('app_logout') }}">
+                        <a class="button is-light is-danger is-small" href="{{ path('app_logout') }}">
                             Déconnexion
                         </a>
                     </div>

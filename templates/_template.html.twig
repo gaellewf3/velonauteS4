@@ -36,7 +36,7 @@
                             <a class="button is-success is-light is-small" href="#">
                                 <strong>{{ app.user.pseudo }}</strong>
                             </a>
-                            <a class="button is-light is-small" href="{{ path('app_logout') }}">
+                            <a class="button is-light is-danger is-small" href="{{ path('app_logout') }}">
                                 Déconnexion
                             </a>
                         {% else %}
@@ -48,8 +48,8 @@
                         </a>
                         {% endif %}
 
-                        {% if is_granted('ROLE_EDITOR') %}
-                            <a class="button is-success is-light is-small" href="#">
+                        {% if is_granted('ROLE_ADMIN') %}
+                            <a class="button is-success is-light is-small" href="{{ path('admin_dashboard') }}">
                             <strong>Back Office</strong>
                         </a>
                         {% endif %}

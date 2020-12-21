@@ -44,11 +44,6 @@ class User implements UserInterface
     private $pseudo;
 
     /**
-     * @ORM\OneToMany(targetEntity=Commandes::class, mappedBy="user")
-     */
-    private $prenom;
-
-    /**
      * @ORM\Column(type="string", length=255)
      */
     private $nom;
@@ -68,9 +63,20 @@ class User implements UserInterface
      */
     private $cp;
 
+    /**
+     * @ORM\Column(type="string", length=255)
+     */
+    private $prenom;
+
+    /**
+     * @ORM\OneToMany(targetEntity=Commandes::class, mappedBy="user")
+     */
+    private $commandes;
+
     public function __construct()
     {
         $this->prenom = new ArrayCollection();
+        $this->commandes = new ArrayCollection();
     }
 
     public function getId(): ?int
@@ -163,36 +169,6 @@ class User implements UserInterface
         return $this;
     }
 
-    /**
-     * @return Collection|Commandes[]
-     */
-    public function getPrenom(): Collection
-    {
-        return $this->prenom;
-    }
-
-    public function addPrenom(Commandes $prenom): self
-    {
-        if (!$this->prenom->contains($prenom)) {
-            $this->prenom[] = $prenom;
-            $prenom->setUser($this);
-        }
-
-        return $this;
-    }
-
-    public function removePrenom(Commandes $prenom): self
-    {
-        if ($this->prenom->removeElement($prenom)) {
-            // set the owning side to null (unless already changed)
-            if ($prenom->getUser() === $this) {
-                $prenom->setUser(null);
-            }
-        }
-
-        return $this;
-    }
-
     public function getNom(): ?string
     {
         return $this->nom;
@@ -237,6 +213,48 @@ class User implements UserInterface
     public function setCp(int $cp): self
     {
         $this->cp = $cp;
+
+        return $this;
+    }
+
+    public function getPrenom(): ?string
+    {
+        return $this->prenom;
+    }
+
+    public function setPrenom(string $prenom): self
+    {
+        $this->prenom = $prenom;
+
+        return $this;
+    }
+
+    /**
+     * @return Collection|Commandes[]
+     */
+    public function getCommandes(): Collection
+    {
+        return $this->commandes;
+    }
+
+    public function addCommande(Commandes $commande): self
+    {
+        if (!$this->commandes->contains($commande)) {
+            $this->commandes[] = $commande;
+            $commande->setUser($this);
+        }
+
+        return $this;
+    }
+
+    public function removeCommande(Commandes $commande): self
+    {
+        if ($this->commandes->removeElement($commande)) {
+            // set the owning side to null (unless already changed)
+            if ($commande->getUser() === $this) {
+                $commande->setUser(null);
+            }
+        }
 
         return $this;
     }
