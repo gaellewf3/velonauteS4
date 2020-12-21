@@ -36,11 +36,11 @@
                             <a class="button is-success is-light is-small" href="#">
                                 <strong>{{ app.user.pseudo }}</strong>
                             </a>
-                            <a class="button is-light is-small" href="#">
+                            <a class="button is-light is-small" href="{{ path('app_logout') }}">
                                 Déconnexion
                             </a>
                         {% else %}
-                        <a class="button is-success is-light is-small" href="#">
+                        <a class="button is-success is-light is-small" href="{{ path('app_register')}}">
                             <strong>Inscription</strong>
                         </a>
                         <a class="button is-success is-light is-small" href="{{ path('app_login') }}" title="Connexion">
