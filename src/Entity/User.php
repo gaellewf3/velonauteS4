@@ -75,7 +75,6 @@ class User implements UserInterface
 
     public function __construct()
     {
-        $this->prenom = new ArrayCollection();
         $this->commandes = new ArrayCollection();
     }
 
