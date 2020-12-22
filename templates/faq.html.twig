@@ -1,5 +1,4 @@
-{% extends "base.html.twig" %}
-
+{% extends "_template.html.twig" %}
 
     {% block body %}
     {# <!------------------------- FAQ --------------------------------> #}
@@ -147,8 +146,10 @@
         </div>
     </div>
 
+    {% block javascripts %}
+        <script src="{{ asset('js/faq.js') }}" type="text/javascript"></script>
     {% endblock %}
 
-{# <!--------------- Footer --------------------> #}
+{% endblock %}
 
-{% extends "footer.html.twig" %}
+
