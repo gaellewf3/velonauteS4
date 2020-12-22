@@ -1,23 +1,22 @@
 {% extends "_template.html.twig" %}
 
 {% block title %}
-    {{ itineraire.nom }}
+    {# {{ itineraire.nom }} #}
 {% endblock %}
 
 {% block content %}
     <div class="section">
 
-        <h1 class="title">Itineraire: {{ itineraire.nom }}</h1>
+        {# <h1 class="title">Itineraire: {{ itineraire.nom }}</h1> #}
         <div class="content">
-            <p>{{ itineraire.description }}</p>
+            {# <p>{{ itineraire.description }}</p> #}
         </div>
 
         <h3 class="subtitle">
-            Itineraire: {{ itineraire.records|length }}
+            {# Itineraire: {{ itineraire.records|length }} #}
         </h3>
 
 
-        {% include 'record/_record_list.html.twig' with {record_list: artist.records} %}
     </div>
 {% endblock %}
 

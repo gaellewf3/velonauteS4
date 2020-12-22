@@ -1,0 +1,15 @@
+{{ form_start(itineraire_form) }}
+
+    {# Affichage d'un champ de formulaire complet (label, erreurs, input, message d'aide) #}
+    {{ form_row(itineraire_form.region, {label: 'Région:'}) }}
+    {{ form_row(itineraire_form.imageFile, {label: 'Image:'}) }}
+    {{ form_row(itineraire_form.nom, {label: 'Nom:'}) }}
+
+    {{ form_row(itineraire_form.description, {label: 'Description:'}) }}
+    {{ form_row(itineraire_form.informations, {label: 'Informations:'}) }}
+
+    <button type="submit" class="button is-primary is-fullwidth">
+        Enregistrer
+    </button>
+
+{{ form_end(itineraire_form) }}

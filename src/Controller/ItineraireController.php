@@ -9,11 +9,11 @@ use Symfony\Component\Routing\Annotation\Route;
 class ItineraireController extends AbstractController
 {
     /**
-     * @Route("/itineraire", name="itineraire")
+     * @Route("/itineraire/{id<\d+>}", name="itineraire")
      */
     public function index(): Response
     {
-        return $this->render('admin/itineraire/index.html.twig', [
+        return $this->render('itineraire/index.html.twig', [
             'controller_name' => 'ItineraireController',
         ]);
     }
