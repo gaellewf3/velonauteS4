@@ -4,9 +4,20 @@
 
 {% block content %}
 
-     <div class="section">
-        <h1 class="title">Membre: {{ app.user.nom }}</h1>
-
-    </div>
+    <section class="section">
+        <div class="columns">
+            <div class="column">
+                <h1 class="title has-text-primary">
+                    {{ app.user.id }}
+                </h1>
+                <p class="content">
+                    {{ app.user.prenom }}
+                </p>
+                <p class="content">
+                    {{ app.user.nom }}
+                </p>
+            </div>
+        </div>
+    </section>
 
 {% endblock %}
