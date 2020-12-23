@@ -1,0 +1,20 @@
+{# 
+Affichage des messages flash
+Structure des messages flash:
+    [
+        "success" => [
+            "Mon premier message",
+            "Mon second message",
+        ],
+        "danger" => [
+            "Oh non, une erreur !"
+        ]
+    ]
+#}
+{% for type, message_list in app.flashes %}
+   {% for message in message_list %}
+       <div class="notification is-{{ type }}">
+            {{ message }}
+       </div>
+   {% endfor %} 
+{% endfor %}

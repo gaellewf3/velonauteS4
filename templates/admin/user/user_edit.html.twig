@@ -1,0 +1,13 @@
+{% extends "admin/dashboard/index.html.twig" %}
+
+{% block title %}
+    Modification
+{% endblock %}
+
+{% block content %}
+    <div class="section">
+        <h2 class="title">{{user.nom }}</h2>
+        {% include 'includes/flash.html.twig' %}
+        {% include "admin/user/_user_form.html.twig" %}
+    </div>
+{% endblock %}
