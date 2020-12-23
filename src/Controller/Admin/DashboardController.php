@@ -4,6 +4,7 @@ namespace App\Controller\Admin;
 
 // use App\Form\UserFormType;
 use App\Form\ItineraireFormType;
+use App\Repository\ItineraireRepository;
 use Doctrine\ORM\EntityManagerInterface;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 use Symfony\Component\HttpFoundation\Request;
@@ -40,7 +41,20 @@ class DashboardController extends AbstractController
 
     
 
-     /** ajouter un itineraire
+   /**
+     * AFFICHER Liste des itineraires
+     * @Route("/itineraire", name="itineraire")
+     */
+    public function itineraireList(ItineraireRepository $itineraireRepository)
+    {
+        return $this->render('admin/dashboard/itineraire_list.html.twig', [
+            'itineraire_list' => $itineraireRepository->findAll(),
+        ]);
+    }
+
+
+
+     /** AJOUTER un itineraire
      * @Route("/itineraire/new", name="itineraire_add")
      */
 
@@ -74,3 +88,7 @@ class DashboardController extends AbstractController
                 ]);
     }
 }
+
+// A FAIRE 
+// Modification d'un itineraire
+// suppression d'itineraire 
