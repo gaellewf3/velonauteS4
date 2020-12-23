@@ -68,4 +68,36 @@ class ProduitController extends AbstractController
             'confirmation_form' => $form->createView(),
         ]);
     }
+
+        /**
+     * Ajouter un produit
+     * @Route("admin/produit/new", name="produit_add")
+     */
+    public function produitAdd(Request $request, EntityManagerInterface $manager)
+    {   
+
+        // 1. Créer le formulaire
+        $form = $this->createForm(ProduitFormType::class);
+        // 2. Passage de la requête au formulaire (récupération des données POST, validation)
+        $form->handleRequest($request);
+
+        // 3. Vérifier si le formulaire a été envoyé et est valide
+        if ($form->isSubmitted() && $form->isValid()) {
+            // 4. Récupérer les données de formulaire
+            $produit = $form->getData();
+
+            // Enregistrement en base de données
+            $manager->persist($produit);
+            $manager->flush();
+
+            // Ajout d'un message flash
+            $this->addFlash('success', 'Le nouvel produit a été enregistré.');
+            return $this->redirectToRoute('produit_edit', ['id' => $produit->getId()]);
+        }
+
+        // On envoit une "vue de formulaire" au template
+        return $this->render('admin/produit/produit_add.html.twig', [
+            'produit_form' => $form->createView()
+        ]);
+    }
 }
