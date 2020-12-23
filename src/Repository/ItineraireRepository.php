@@ -22,7 +22,7 @@ class ItineraireRepository extends ServiceEntityRepository
     // /**
     //  * @return Itineraire[] Returns an array of Itineraire objects
     //  */
-    /*
+    
     public function findByExampleField($value)
     {
         return $this->createQueryBuilder('i')
@@ -34,9 +34,9 @@ class ItineraireRepository extends ServiceEntityRepository
             ->getResult()
         ;
     }
-    */
+    
 
-    /*
+     
     public function findOneBySomeField($value): ?Itineraire
     {
         return $this->createQueryBuilder('i')
@@ -46,5 +46,5 @@ class ItineraireRepository extends ServiceEntityRepository
             ->getOneOrNullResult()
         ;
     }
-    */
+     
 }

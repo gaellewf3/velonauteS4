@@ -1,0 +1,45 @@
+{% extends "admin/_template.html.twig" %}
+
+{% block title %}
+    itineraire
+{% endblock %}
+
+{% block content %}
+    <div class="section">
+        <h1 class="title">Itineraire: {{ itineraire_list|length }}</h1>
+
+            {# {% include 'includes/flash.html.twig' %} #}
+
+        <table class="table is-fullwidth">
+            <thead>
+
+            <tr>
+                <th>Region</th>
+                <th>Nom</th>
+                <th>
+                    <a href="{{path ('admin_itineraire_add') }}" class="button is-info is-small">
+                        Nouvel itineraire
+                    </a>
+                </th>
+            </tr>
+            </thead>
+           {# <tbody>
+             {% for itineraire in itineraire_list %} #}
+                {# <tr>
+                    <td>{{ itineraire.name }}</td>
+                    <td>{{ itineraire.description|slice(0, 25) }}</td>
+                    <td>
+                        <a href="{{ path ('admin_itineraire_edit', {id: itineraire.id}) }}" class="button is-small is-success">
+                            <i class="fas fa-edit"></i>
+                        </a>
+                       
+                        <a href="{{ path ('admin_itineraire_delete', {id: itineraire.id}) }}" class="button is-small is-success">
+                            <i class="fas fa-trash-alt"></i>
+                        </a>
+                    </td>
+                </tr> #}
+              {% endfor %}
+            </tbody>
+        </table>
+    </div>
+{% endblock %}

@@ -1,7 +1,8 @@
 <?php
 
-namespace App\Controller;
+namespace App\Controller\Admin;
 
+use App\Repository\ItineraireRepository;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 use Symfony\Component\HttpFoundation\Response;
 use Symfony\Component\Routing\Annotation\Route;
@@ -9,12 +10,12 @@ use Symfony\Component\Routing\Annotation\Route;
 class ItineraireController extends AbstractController
 {
     /**
-     * @Route("itineraire", name="tineraire")
+     * @Route("/admin/itineraire", name="admin_itineraire")
      */
-    public function index(): Response
+    public function index(ItineraireRepository $itineraireRepository): Response
     {
         return $this->render('admin/itineraire/index.html.twig', [
-            'controller_name' => 'ItineraireController',
+            'itineraire' => $itineraireRepository->findAll()
         ]);
     }
 }

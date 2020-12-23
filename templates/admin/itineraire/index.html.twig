@@ -1,0 +1,95 @@
+{# {% extends "_template.html.twig" %} #}
+
+  
+  {% extends "admin/dashboard/index.html.twig" %}  
+
+{% block title %} itineraire {% endblock %}
+
+
+{% block content %}
+    <div class="section">
+
+         <h1 class="title">Itineraire: 
+         {# {{ itineraire.region }}  #}
+         </h1> 
+         
+        {# ou 
+         <h1 class="title">Itineraire: {{ itineraire_list|length }}</h1> #}
+ 
+      <table class="table is-fullwidth">
+            <thead>
+            <tr> 
+      
+                <th>Région</th>
+                <th>Nom</th>
+                <th>Description</th>
+                <th>Information</th>
+                <th>Filename</th>
+                <th>Supprimer</th>
+            </tr>
+            </thead>
+            <tbody>
+
+        {% for itineraire in itineraire %}
+                        <tr>
+                            <td>{{ itineraire.region }}</td>
+                            <td>{{ itineraire.nom }}</td>
+                            <td>{{ itineraire.description }}</td>
+                            <td>{{ itineraire.informations }}</td>
+                            <td>{{ itineraire.filename }}</td>
+                     
+                             <td>
+                                <a href="#" class="button is-small is-success">
+                                {# <a href="{{ path('itineraire_edit', {id: itineraire.id}) }}" class="button is-small is-success"> #}
+                                    <i class="fas fa-edit"></i>
+                                </a>
+                            </td>
+                            <td>
+                                <a href="#" class="button is-small is-danger">
+                                    <i class="fas fa-trash-alt"></i>
+                                </a>
+                            </td>
+                        </tr>
+                    {% endfor %}
+                    </tbody>
+                </table>
+            </div>  
+        {% endblock %}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+{# template d'origine // ne pas effacer  #}
+
+
+{# {% extends 'base.html.twig' %}
+
+{% block title %}Hello ItineraireController!{% endblock %}
+
+{% block body %}
+<style>
+    .example-wrapper { margin: 1em auto; max-width: 800px; width: 95%; font: 18px/1.5 sans-serif; }
+    .example-wrapper code { background: #F5F5F5; padding: 2px 6px; }
+</style>
+
+<div class="example-wrapper">
+    <h1>Hello {{ controller_name }}! ✅</h1>
+
+    This friendly message is coming from:
+    <ul>
+        <li>Your controller at <code><a href="{{ 'C:/Users/WEBFORCE3/Documents/webforce_cours/SYMFONY/velonauteS4/src/Controller/Admin/ItineraireController.php'|file_link(0) }}">src/Controller/Admin/ItineraireController.php</a></code></li>
+        <li>Your template at <code><a href="{{ 'C:/Users/WEBFORCE3/Documents/webforce_cours/SYMFONY/velonauteS4/templates/admin/itineraire/index.html.twig'|file_link(0) }}">templates/admin/itineraire/index.html.twig</a></code></li>
+    </ul>
+</div>
+{% endblock %} #}
