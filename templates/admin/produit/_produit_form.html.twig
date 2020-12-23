@@ -1,0 +1,15 @@
+{{ form_start(produit_form) }}
+
+    {# Affichage d'un champ de formulaire complet (label, erreurs, input, message d'aide) #}
+    {{ form_row(produit_form.categorie, {label: 'Categorie:'}) }}
+
+    {{ form_row(produit_form.nom, {label: 'Nom:'}) }}
+
+    {{ form_row(produit_form.prix, {label: 'Prix:'}) }}
+
+    {{ form_row(produit_form.description, {label: 'Description:'}) }}
+
+    <button type="submit" class="button is-primary is-fullwidth">
+        Enregistrer
+    </button>
+{{ form_end(produit_form) }}
