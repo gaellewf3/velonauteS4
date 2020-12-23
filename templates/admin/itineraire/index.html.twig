@@ -35,10 +35,12 @@
                             <td>{{ itineraire.region }}</td>
                             <td>{{ itineraire.nom }}</td>
                             <td>{{ itineraire.description }}</td>
-                            <td>{{ itineraire.information }}</td>
+                            <td>{{ itineraire.informations }}</td>
                             <td>{{ itineraire.filename }}</td>
-                        
-                                <a href="{{ path('itineraire_edit', {id: itineraire.id}) }}" class="button is-small is-success">
+                     
+                             <td>
+                                <a href="#" class="button is-small is-success">
+                                {# <a href="{{ path('itineraire_edit', {id: itineraire.id}) }}" class="button is-small is-success"> #}
                                     <i class="fas fa-edit"></i>
                                 </a>
                             </td>
