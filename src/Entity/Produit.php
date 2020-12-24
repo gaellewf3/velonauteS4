@@ -60,12 +60,6 @@ class Produit
      */
     private $imageSize;
 
-    /**
-     * @ORM\Column(type="datetime")
-     *
-     * @var \DateTimeInterface|null
-     */
-    private $updatedAt;
 
     public function getId(): ?int
     {
@@ -131,15 +125,9 @@ class Produit
      * @param  File|\Symfony\Component\HttpFoundation\File\UploadedFile|null $imageFile
      *
      */ 
-    public function setImageFile(File $imageFile = null): void
+    public function setImageFile(File $imageFile = null)
     {
-        $this->imageFile = $imageFile;
-
-        if (null !== $imageFile) {
-            // It is required that at least one field changes if you are using doctrine
-            // otherwise the event listeners won't be called and the file is lost
-            $this->updatedAt = new \DateTimeImmutable();
-        }
+        return $this->imageFile = $imageFile;
     }
 
     /**
@@ -159,9 +147,9 @@ class Produit
      *
      * @return  self
      */ 
-    public function setImageName(?string $imageName): void
+    public function setImageName(?string $imageName)
     {
-        $this->imageName = $imageName;
+        return $this->imageName = $imageName;
     }
 
     /**
@@ -184,29 +172,5 @@ class Produit
     public function setImageSize(?int $imageSize): void
     {
         $this->imageSize = $imageSize;
-    }
-
-    /**
-     * Get the value of updatedAt
-     *
-     * @return  \DateTimeInterface|null
-     */ 
-    public function getUpdatedAt()
-    {
-        return $this->updatedAt;
-    }
-
-    /**
-     * Set the value of updatedAt
-     *
-     * @param  \DateTimeInterface|null  $updatedAt
-     *
-     * @return  self
-     */ 
-    public function setUpdatedAt($updatedAt)
-    {
-        $this->updatedAt = $updatedAt;
-
-        return $this;
     }
 }
