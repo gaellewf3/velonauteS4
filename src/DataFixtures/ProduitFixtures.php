@@ -17,6 +17,8 @@ class ProduitFixtures extends BaseFixture
                 ->setCategorie('velo')
                 ->setPrix(40)
                 ->setDescription($this->faker->realText())
+                ->setImageName($this->faker->realText())
+                ->setUpdatedAt($this->faker->dateTime())
             ;
         });
     }

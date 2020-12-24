@@ -10,6 +10,7 @@ use Symfony\Component\Form\Extension\Core\Type\TextareaType;
 use Symfony\Component\Form\Extension\Core\Type\TextType;
 use Symfony\Component\Form\FormBuilderInterface;
 use Symfony\Component\OptionsResolver\OptionsResolver;
+use Vich\UploaderBundle\Form\Type\VichImageType;
 
 class ProduitFormType extends AbstractType
 {
@@ -27,9 +28,16 @@ class ProduitFormType extends AbstractType
                 'divisor' => 100,
             ])
             ->add('description', TextareaType::class)
-            // ->add('imageFile', FileType::class, [
-            //     'required' => false
-            // ])
+            ->add('imageFile', VichImageType::class, [
+                'required' => false,
+                'allow_delete' => true,
+                'delete_label' => '...',
+                'download_label' => '...',
+                'download_uri' => true,
+                'image_uri' => true,
+                'imagine_pattern' => '...',
+                'asset_helper' => true,
+            ])
         ;
     }
 
