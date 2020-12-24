@@ -75,9 +75,9 @@ class ProduitController extends AbstractController
      */
     public function produitAdd(Request $request, EntityManagerInterface $manager)
     {   
-
+        $produit = new Produit();
         // 1. Créer le formulaire
-        $form = $this->createForm(ProduitFormType::class);
+        $form = $this->createForm(ProduitFormType::class, $produit);
         // 2. Passage de la requête au formulaire (récupération des données POST, validation)
         $form->handleRequest($request);
 
