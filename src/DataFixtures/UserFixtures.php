@@ -7,7 +7,7 @@ use Doctrine\Bundle\FixturesBundle\Fixture;
 use Doctrine\Persistence\ObjectManager;
 use Symfony\Component\Security\Core\Encoder\UserPasswordEncoderInterface;
 
-class UserFixtures extends Fixture
+class UserFixtures extends BaseFixture
 {
     private $encoder;
 
@@ -16,12 +16,11 @@ class UserFixtures extends Fixture
         $this->encoder = $encoder;
     }
 
-    public function load(ObjectManager $manager)
+    public function loadData(): void
     {
-        // $product = new Product();
-        // $manager->persist($product);
-        $user = new User();
-        $user 
+        $this->createMany(1, 'user_admin', function() {
+            $user = new User();
+            return $user 
             ->setEmail('admin1'. '@velonaute.fr')
             ->setRoles(['ROLE_ADMIN'])
             ->setPassword($this->encoder->encodePassword($user, 'admin1'))
@@ -32,7 +31,21 @@ class UserFixtures extends Fixture
             ->setCp('58825')           
             ->setPrenom('admin')
         ;
-        $manager->persist($user);
-        $manager->flush();
+        });
+
+        $this->createMany(10, 'user_user', function (int $num) {
+            $user = new User();
+            $password = $this->encoder->encodePassword($user, 'user' . $num);
+            return $user
+                ->setEmail('user' . $num . '@velonaute.fr')
+                ->setPassword($password)
+                ->setPseudo('user' . $num)
+                ->setNom($this->faker->firstName)            
+                ->setAdresse($this->faker->address)            
+                ->setVille($this->faker->city)            
+                ->setCp('7000')           
+                ->setPrenom($this->faker->lastName)
+            ;
+        });
     }
 }
