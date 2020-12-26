@@ -1,0 +1,23 @@
+{% extends "admin/dashboard/index.html.twig" %}
+
+{% block title %}
+    Nouvel produit
+{% endblock %}
+
+{% block content %}
+    <div class="section">
+        <h1 class="title">Nouvel produit</h1>
+
+        {{ form_start(produit_form) }}
+            {{ form_row(produit_form.categorie, {label: 'Categorie:'}) }}
+            {{ form_row(produit_form.nom, {label: 'Nom:'}) }}
+            {{ form_row(produit_form.prix, {label: 'Prix:'}) }}
+            {{ form_row(produit_form.description, {label: 'Description:'}) }}
+            {{ form_row(produit_form.imageFile, {label: 'Image:'}) }}
+
+            <button type="submit" class="button is-primary is-fullwidth" >
+                Ajouter
+            </button>
+        {{ form_end(produit_form) }}
+    </div>
+{% endblock %}
