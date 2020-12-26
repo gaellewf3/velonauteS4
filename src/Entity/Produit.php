@@ -42,7 +42,7 @@ class Produit
     private $description;
     
     /**
-     * @Vich\UploadableField(mapping="product_images", fileNameProperty="imageName", size="imageSize")
+     * @Vich\UploadableField(mapping="product_image", fileNameProperty="imageName", size="imageSize")
      * @var File|null
      */
     private $imageFile;
