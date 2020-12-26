@@ -5,6 +5,7 @@ namespace App\Entity;
 use App\Repository\ProduitRepository;
 use Doctrine\ORM\Mapping as ORM;
 use Symfony\Component\HttpFoundation\File\File;
+use Symfony\Component\HttpFoundation\File\UploadedFile;
 use Vich\UploaderBundle\Mapping\Annotation as Vich;
 
 
@@ -60,6 +61,10 @@ class Produit
      */
     private $imageSize;
 
+    /**
+     * @ORM\Column(type="datetime")
+     */
+    private $updateAt;
 
     public function getId(): ?int
     {
@@ -120,36 +125,34 @@ class Produit
     }
 
     /**
-     * Set the value of imageFile
+     * If manually uploading a file (i.e. not using Symfony Form) ensure an instance
+     * of 'UploadedFile' is injected into this setter to trigger the update. If this
+     * bundle's configuration parameter 'inject_on_load' is set to 'true' this setter
+     * must be able to accept an instance of 'File' as the bundle will inject one here
+     * during Doctrine hydration.
      *
-     * @param  File|\Symfony\Component\HttpFoundation\File\UploadedFile|null $imageFile
-     *
-     */ 
-    public function setImageFile(File $imageFile = null)
+     * @param File|\Symfony\Component\HttpFoundation\File\UploadedFile|null $imageFile
+     */
+    public function setImageFile(?File $imageFile = null): void
     {
-        return $this->imageFile = $imageFile;
+        $this->imageFile = $imageFile;
+
+        if ($imageFile instanceof UploadedFile) {
+            // It is required that at least one field changes if you are using doctrine
+            // otherwise the event listeners won't be called and the file is lost
+            $this->setUpdateAt(new\DateTime());
+        }
     }
 
-    /**
-     * Get the value of imageName
-     *
-     * @return  string
-     */ 
+  
     public function getImageName(): ?string
     {
         return $this->imageName;
     }
 
-    /**
-     * Set the value of imageName
-     *
-     * @param  string  $imageName
-     *
-     * @return  self
-     */ 
-    public function setImageName(?string $imageName)
+    public function setImageName(?string $imageName): void
     {
-        return $this->imageName = $imageName;
+        $this->imageName = $imageName;
     }
 
     /**
@@ -157,7 +160,7 @@ class Produit
      *
      * @return  int|null
      */ 
-    public function getImageSize(): ?string
+    public function getImageSize(): ?int
     {
         return $this->imageSize;
     }
@@ -173,4 +176,17 @@ class Produit
     {
         $this->imageSize = $imageSize;
     }
+
+    public function getUpdateAt(): ?\DateTimeInterface
+    {
+        return $this->updateAt;
+    }
+
+    public function setUpdateAt(\DateTimeInterface $updateAt): self
+    {
+        $this->updateAt = $updateAt;
+
+        return $this;
+    }
+
 }

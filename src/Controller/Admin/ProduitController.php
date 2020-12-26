@@ -24,7 +24,7 @@ class ProduitController extends AbstractController
         ]);
     }
 
-        /**
+    /**
      * Modification 
      * @Route("/admin/produit/{id}/edit", name="produit_edit")
      */
@@ -46,7 +46,7 @@ class ProduitController extends AbstractController
         ]);
     }
 
-        /**
+    /**
      * Suppresion 
      * @Route("admin/produit/{id}/delete", name="produit_delete")
      */
@@ -69,7 +69,7 @@ class ProduitController extends AbstractController
         ]);
     }
 
-        /**
+    /**
      * Ajouter un produit
      * @Route("admin/produit/new", name="produit_add")
      */

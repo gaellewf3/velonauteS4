@@ -31,6 +31,7 @@ class ProduitFormType extends AbstractType
             ->add('imageFile', VichImageType::class, [
                 'required' => false,
                 'allow_delete' => true,
+                'download_uri' => true,
                 'image_uri' => true,
                 'asset_helper' => true,
             ])
