@@ -22,7 +22,7 @@
                     <th>Nom</th>
                     <th>Prix</th>
                     <th>Description</th>
-                    
+                    <th>Image</th>
                 </tr>
             </thead>
             <tbody>
@@ -32,6 +32,7 @@
                         <td>{{ produit.nom }}</td>
                         <td>{{ produit.prix }}</td>
                         <td>{{ produit.description }}</td>
+                        <td class="image is-128x128"><img src=" {{ asset("/images/products/" ~ produit.imageName) }} "/></td>
                         <td>
                             <a href="{{ path('produit_edit', {id: produit.id}) }}" class="button is-small is-success">
                                 <i class="fas fa-edit"></i>
