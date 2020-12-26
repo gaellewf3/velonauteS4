@@ -13,11 +13,12 @@ class ProduitFixtures extends BaseFixture
         // Générer 10 itinéraires 
         $this->createMany(10, 'produit', function() {
             return (new Produit())
-                ->setNom($this->faker->name)
+                ->setNom('Route')
                 ->setCategorie('velo')
-                ->setPrix(40)
+                ->setPrix(30)
                 ->setDescription($this->faker->realText())
-                ->setUpdateAt($this->faker->dateTime)
+                ->setImageName('casque-5fe77192c2be2372407641.jpg')
+                ->setImageSize(100)
             ;
         });
     }

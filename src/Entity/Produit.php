@@ -150,9 +150,11 @@ class Produit
         return $this->imageName;
     }
 
-    public function setImageName(?string $imageName): void
+    public function setImageName(?string $imageName): self
     {
         $this->imageName = $imageName;
+
+        return $this;
     }
 
     /**
@@ -172,9 +174,11 @@ class Produit
      *
      * @return  self
      */ 
-    public function setImageSize(?int $imageSize): void
+    public function setImageSize(?int $imageSize): self
     {
         $this->imageSize = $imageSize;
+        
+        return $this;
     }
 
     public function getUpdateAt(): ?\DateTimeInterface
