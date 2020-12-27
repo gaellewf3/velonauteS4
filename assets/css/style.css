@@ -1569,12 +1569,31 @@ aside{
 #containerPaiement {
     width: 90%;
     display: flex;
-    margin: auto;
+    margin: 30px auto;
+}
+
+.numero-carte {
+    width: 70%;
+    float: left;
+}
+
+.code-securite {
+    width: 25%;
+    float: right;
+}
+
+.expiration-mois {
+    width: 45%;
+    float: left;
+}
+
+.expiration-annee {
+    width: 50%;
+    float: right;
 }
 
 .resa {
     width: 50%;
-    margin-top: 100px;
 }
 
 #paiement {
@@ -1587,16 +1606,6 @@ aside{
     font-size: 30px;
     width: 50%;
     margin: 50px 0 10px 0;
-}
-
- #paiement h3 {
-     text-align: right;
-    font-family: 'Archivo Black', sans-serif;
-    color: rgba(11, 38, 39, 0.767);
-    font-size: 20px;
-    width: 50%;
-    margin: 160px 0 20px 0;
-  
 }
 
 .imagePaiement { 
