@@ -38,6 +38,7 @@ class CartController extends AbstractController
             'items' => $panierWithData,
             'total' => $total
         ]);
+        
     }
 
     /**
@@ -54,8 +55,8 @@ class CartController extends AbstractController
         }
         
         $session->set('panier', $panier);
-
-        return $this->redirectToRoute("cart_index");
+        $this->addFlash('success', 'Le produit a été ajouté.');
+        return $this->redirectToRoute("reservation");
     }
 
     /**
@@ -69,6 +70,7 @@ class CartController extends AbstractController
         }
 
         $session->set('panier', $panier);
+        $this->addFlash('info', 'Le produit a bien été supprimé.');
 
         return $this->redirectToRoute("cart_index");
     }

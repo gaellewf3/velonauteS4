@@ -3,8 +3,12 @@
 {% block title %}Panier{% endblock %}
 
 {% block content %}
+
+    {% include "includes/flash.html.twig" %}
+
     {% if items | length > 0 %}
-        <table class="table is-hoverable is-centered section">
+    <div class="columns is-centered section">
+        <table class="table is-hoverable">
             <thead>
                 <tr>
                     <th>Produit</th>
@@ -17,6 +21,9 @@
             <tbody>
                 {% for item in items %}
                     <tr>
+                        <td>
+                            <img class="image is-48x48" src=" {{ asset("/images/products/" ~ item.product.imageName) }} "/>
+                        </td>
                         <td>{{ item.product.nom }}</td>
                         <td>{{ item.product.prix }}</td>
                         <td>{{ item.quantity }}</td>
@@ -35,8 +42,9 @@
                 </tr>
             </tfoot>
         </table>
+    </div>
     {% else %}
-        <p>Votre panier est vide</p>
+        <p class="has-text-centered">Votre panier est vide</p>
     {% endif %}
 
 {% endblock %}

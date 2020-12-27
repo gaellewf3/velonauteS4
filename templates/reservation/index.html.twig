@@ -8,25 +8,30 @@
 
         {% include "includes/flash.html.twig" %}
 
-        <div class="columns is-multiline">
+        <div class="columns is-multiline is-mobile">
             {% for produit in produit_list %}
-                <div class="column is-one-quarter">
+                <div class="column is-one-quarter box">
                     <h2>
-                        {{ produit.nom }}
+                        {{ produit.categorie }}
                     </h2>
-                    <img class="image is-128x128" src=" {{ asset("/images/products/" ~ produit.imageName) }} "/>
-                    <p>
+                    <div class="card-content">
+                        <img class="image is-128x128" src=" {{ asset("/images/products/" ~ produit.imageName) }} "/>
+                    </div>
+                    <p class="has-text-centered">
+                        {{ produit.nom }}
+                        <br>
                         {{ produit.description }}
                     </p>
-                    <h3>
-                        {{ produit.prix }} $
+                    <h3 class="has-text-weight-semibold has-text-black">
+                        {{ produit.prix }} € / jour
                     </h3>
-                    <a href="{{ path('cart_add', {id: produit.id}) }}" class="btn btn-success float-right"><i class="fas fa-shopping-cart mr-1"></i>
+                    <a href="{{ path('cart_add', {id: produit.id}) }}" class="button is-small is-success is-pulled-right"><i class="fas fa-shopping-cart mr-1"></i>
                         Ajouter
                     </a>
                 </div>   
             {% endfor %}
         <div>
     </div>
+
 {% endblock %}
 
