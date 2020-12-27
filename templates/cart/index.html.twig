@@ -8,9 +8,10 @@
 
     {% if items | length > 0 %}
     <div class="columns is-centered section">
-        <table class="table is-hoverable">
+        <table class="table is-hoverable is-fullwidth">
             <thead>
                 <tr>
+                    <th></th>
                     <th>Produit</th>
                     <th>Prix</th>
                     <th>Quantité</th>
@@ -38,10 +39,14 @@
                 <tr>
                     <td colspan="3" class="has-text-right">Total : </td>
                     <td>{{ total }}</td>
-                    <td></td>
+                    <td>
+                        <button type="submit" class="button is-success">Acheter</button>
+                    </td>
                 </tr>
             </tfoot>
         </table>
+        
+
     </div>
     {% else %}
         <p class="has-text-centered">Votre panier est vide</p>
