@@ -4,6 +4,7 @@ namespace App\Form;
 
 use App\Entity\Itineraire;
 use Symfony\Component\Form\AbstractType;
+use Symfony\Component\Form\Extension\Core\Type\DateTimeType;
 use Symfony\Component\Form\Extension\Core\Type\TextType;
 use Symfony\Component\Form\Extension\Core\Type\FileType;
 use Symfony\Component\Form\FormBuilderInterface;
@@ -22,6 +23,7 @@ class ItineraireFormType extends AbstractType
             ->add('nom', TextType::class )
             ->add('description', TextType::class)
             ->add('informations', TextType::class)
+            ->add('updated_at', DateTimeType::class)            
             ->add('imageFile', FileType::class, [
                 'required' => false
             ])

@@ -18,6 +18,8 @@
  
       <table class="table is-fullwidth">
             <thead>
+               
+                 
             <tr> 
       
                 <th>Région</th>
@@ -25,8 +27,14 @@
                 <th>Description</th>
                 <th>Information</th>
                 <th>Filename</th>
-                <th>Supprimer</th>
-            </tr>
+                <th>Modifier</th>                
+                <th>Supprimer</th>                
+                <th>
+                    <a href="{{path('itineraire_add') }}" class="button is-info is-small">
+                        Nouvel itineraire
+                    </a>
+                </th>
+            </tr>           
             </thead>
             <tbody>
 
@@ -34,16 +42,17 @@
                         <tr>
                             <td>{{ itineraire.region }}</td>
                             <td>{{ itineraire.nom }}</td>
-                            <td>{{ itineraire.description }}</td>
-                            <td>{{ itineraire.informations }}</td>
-                            <td>{{ itineraire.filename }}</td>
+                            <td>{{ itineraire.description|slice(0, 25) }}</td>
+                            <td>{{ itineraire.informations|slice(0, 25) }}</td>
+                            <td>{{ itineraire.filename|slice(0, 25) }}</td>
                      
-                             <td>
+                            <td>
                                 <a href="#" class="button is-small is-success">
-                                {# <a href="{{ path('itineraire_edit', {id: itineraire.id}) }}" class="button is-small is-success"> #}
-                                    <i class="fas fa-edit"></i>
+                                <a href="{{ path('itineraire_edit', {id: itineraire.id}) }}" class="button is-small is-success">
+                                   <i class="fas fa-edit"></i>
                                 </a>
-                            </td>
+                            </td>  
+
                             <td>
                                 <a href="#" class="button is-small is-danger">
                                     <i class="fas fa-trash-alt"></i>
@@ -55,7 +64,6 @@
                 </table>
             </div>  
         {% endblock %}
-
 
 
 
