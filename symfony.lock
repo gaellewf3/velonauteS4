@@ -99,6 +99,15 @@
     "jms/metadata": {
         "version": "2.4.0"
     },
+    "laminas/laminas-code": {
+        "version": "3.5.1"
+    },
+    "laminas/laminas-eventmanager": {
+        "version": "3.3.0"
+    },
+    "laminas/laminas-zendframework-bridge": {
+        "version": "1.1.1"
+    },
     "monolog/monolog": {
         "version": "1.26.0"
     },
@@ -128,6 +137,9 @@
         "files": [
             "./config/packages/sensio_framework_extra.yaml"
         ]
+    },
+    "stripe/stripe-php": {
+        "version": "v7.67.0"
     },
     "symfony/asset": {
         "version": "v4.4.17"
@@ -316,6 +328,9 @@
     "symfony/property-access": {
         "version": "v4.4.17"
     },
+    "symfony/proxy-manager-bridge": {
+        "version": "v4.4.18"
+    },
     "symfony/routing": {
         "version": "4.2",
         "recipe": {
@@ -462,10 +477,7 @@
             "config/packages/vich_uploader.yaml"
         ]
     },
-    "zendframework/zend-code": {
-        "version": "3.4.1"
-    },
-    "zendframework/zend-eventmanager": {
-        "version": "3.2.1"
+    "webimpress/safe-writer": {
+        "version": "2.1.0"
     }
 }

@@ -1,0 +1,45 @@
+{% extends "_template.html.twig" %}
+
+{% block content %}
+
+	<div id="containerPaiement">
+		<div class="resa">
+
+			<h3 class="titre">Ma réservation</h3>
+			<div>
+				<img src="{{ asset('build/images/paiement/pexels-dorothy-castillo-2270328.jpg') }}" alt="cycliste à la montagne" class="imagePaiement">
+			</div>
+			<h2 id="totalVelonaute">Montant total......150€</h2>
+
+
+		</div>
+
+		<hr>
+
+		<div id="paiement">
+			<h3>Votre paiement</h3>
+
+			<div class="section">
+				{{ form(paiement_form) }}
+			</div>
+
+			<!-- *******************************modal paiement reussi confirmation avec email*************************** -->
+
+			<div id="myModal" class="modal">
+				<div class="modal-content">
+					<a href="#" id="close">X</a>
+
+					<p>BRAVO ! votre réservation a bien été effectuée ! Vous avez reçu un mail de confirmation.</p>
+				</div>
+			</div>
+
+			<!-- ******************************message d'erreur en cas de mauvais numéro de carte ************************ -->
+			<div id="erreur">Le numéro de carte saisi n'est pas valide !</div>
+
+		</div>
+	</div>
+
+
+	{% include "footer.html.twig" %}
+
+{% endblock %}
