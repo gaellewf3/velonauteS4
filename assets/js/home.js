@@ -1,7 +1,17 @@
 console.log('Test de la Page');
 
-/************************ MENU BURGER ************************/
+/************************ PAGE ACCUEIL ************************/
 
+/*COOKIES*/
+
+var accept = document.getElementById('accept'); 
+var banner = document.getElementById('cookies');
+
+accept.onclick = function() {
+    banner.style.display = 'none';
+}
+
+/*BURGER*/
 var burger = document.getElementById("burger");
 console.log(burger);
 
@@ -33,3 +43,5 @@ close.addEventListener("click", function(){
     let contact = document.getElementById('contact');
     contact.style.display = "none"
 });
+
+

@@ -14,7 +14,7 @@ class ItineraireFixtures extends BaseFixture
         $this->createMany(30, 'itineraire', function() {
             return (new Itineraire())
                 ->setNom($this->faker->name)
-                ->setRegion($this->faker->realText())
+                ->setRegion($this->faker->city)
                 ->setDescription($this->faker->realText())
                 ->setInformations($this->faker->realText())
                 ->setFilename($this->faker->realText())

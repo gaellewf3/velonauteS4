@@ -19,7 +19,7 @@ class HomeController extends AbstractController
 
     /**
      * Page FAQ
-     * @Route("/faq}", name="faq")
+     * @Route("/faq", name="faq")
      */
     public function faqPage(HomeController $faq): Response
     {
@@ -30,7 +30,7 @@ class HomeController extends AbstractController
 
     /**
      * Page Mentions
-     * @Route("/mentions}", name="mentions")
+     * @Route("/mentions", name="mentions")
      */
     public function mentionsPage(HomeController $mentions): Response
     {

@@ -13,4 +13,4 @@ require('./app.scss');
 
 //  Récupération du script
 require('./menu.js');
-require('./js/script.js');
+// require('./js/script.js');
