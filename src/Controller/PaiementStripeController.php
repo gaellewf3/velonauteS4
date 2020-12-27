@@ -57,7 +57,7 @@ class PaiementStripeController extends AbstractController
 
             // Ajout d'un message flash
             $this->addFlash('success', 'Le paiement a ete effectue');
-            return $this->redirectToRoute('/paiement/stripe',);
+            return $this->redirectToRoute('paiement_stripe');
         }
 
         return $this->render('paiement_stripe/index.html.twig', [
