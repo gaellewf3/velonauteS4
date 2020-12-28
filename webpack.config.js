@@ -26,7 +26,7 @@ Encore
     .addEntry('faq', './assets/js/faq.js')
     .addEntry('itineraire', './assets/js/itineraire.js')
     .addEntry('reservation', './assets/js/reservation.js')
-    .addEntry('paiement', './assets/js/paiement.js')
+    .addEntry('charge', './assets/js/charge.js')
     
     // enables the Symfony UX Stimulus bridge (used in assets/bootstrap.js)
     // .enableStimulusBridge('./assets/controllers.json')
