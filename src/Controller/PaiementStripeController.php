@@ -27,6 +27,8 @@ class PaiementStripeController extends AbstractController
             $nom = $request->request->get('nom');
             $email = $request->request->get('email');
             $token = $request->request->get('stripeToken');
+            $total = $request->request->get('total');
+
 
             // Create Customer In Stripe
             $customer = \Stripe\Customer::create(array(
@@ -36,7 +38,7 @@ class PaiementStripeController extends AbstractController
 
             // Charge Customer
             $charge = \Stripe\Charge::create(array(
-                "amount" => 5000,
+                "amount" => $total,
                 "currency" => "eur",
                 "description" => "Ma réservation",
                 "customer" => $customer->id

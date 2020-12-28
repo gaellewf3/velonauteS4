@@ -2,7 +2,7 @@
 
 {% block content %}
 	<div class="section">
-
+	     
 		<div>
 			<img src="{{ asset('build/images/paiement/pexels-dorothy-castillo-2270328.jpg') }}" alt="cycliste à la montagne" class="imagePaiement">
 		</div>
@@ -28,6 +28,8 @@
 		</form>
 
 	</div>
+	            <span id="totalVelonaute">Montant total......150€</span>
+
 
 	<script src="https://js.stripe.com/v3/"></script>
 	{{ encore_entry_script_tags('charge') }}

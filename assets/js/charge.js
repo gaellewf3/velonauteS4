@@ -67,6 +67,24 @@ function stripeTokenHandler(token) {
     hiddenInput.setAttribute('value', token.id);
     form.appendChild(hiddenInput);
 
+
+    var hiddenInputTotal = document.createElement('input');
+    hiddenInputTotal.setAttribute('type', 'hidden');
+    hiddenInputTotal.setAttribute('name', 'total');
+    hiddenInputTotal.setAttribute('value', getTotal());
+    form.appendChild(hiddenInputTotal);
+
+
     // Submit the form
     form.submit();
 }
+
+function getTotal() {
+    var parameters = location.search.substring(1).split("&");
+    console.log(parameters)
+    var l = parameters[0].split("=")
+    console.log(l)
+    
+    return l[1]
+}
+document.getElementById('totalVelonaute').innerHTML = "Montant total: " + getTotal() + " euros"
