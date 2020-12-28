@@ -1,6 +1,7 @@
 {# {% extends "admin/index.html.twig" %} #}
 {% extends '_template.html.twig' %}
 
+
 {% block title %}
     Nouvel itinéraire
 {% endblock %}
@@ -9,7 +10,7 @@
     <div class="section">
         <h1 class="title">Nouvel itinéraire</h1>
 
-                  {# {{ form_start(itineraire_form) }}
+                  {{ form_start(itineraire_form) }}
                   {{ form_row(itineraire_form.region) }}
                   {{ form_row(itineraire_form.imageFile) }}
                   {{ form_row(itineraire_form.informations) }}
@@ -21,7 +22,7 @@
                      Ajouter
                 </button>
 
-                {{ form_end(itineraire_form) }} #}
+                {{ form_end(itineraire_form) }}
 
         {% include "admin/dashboard/_itineraire_form.html.twig" %}
     </div>

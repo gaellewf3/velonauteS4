@@ -4,6 +4,10 @@ namespace App\Controller\Admin;
 
 // use App\Form\UserFormType;
 
+ 
+ 
+use App\Form\ConfirmationFormType;
+
 use App\Entity\Itineraire;
 use App\Form\ItineraireFormType;
 use App\Repository\ItineraireRepository;
@@ -109,6 +113,8 @@ class DashboardController extends AbstractController
         //pas d'appel à $manager->persist(): l'entité est déjà connu de l'EntityManager
         $manager->flush();
         $this->addFlash('success', 'L\'itineraire a été mis à jour.');
+        return $this->redirectToRoute('admin_itineraire');
+
        }
 
        return $this->render('admin/dashboard/itineraire_edit.html.twig', [
@@ -117,7 +123,29 @@ class DashboardController extends AbstractController
        ]);
     }
 
-
+        /**
+        * supprimer itineraire
+     * @Route("/itineraire/{id}/delete", name="itineraire_delete")
+       */
+      public function itineraireDelete(Itineraire $itineraire, Request $request, 
+      EntityManagerInterface $manager)
+      {
+          $form = $this->createForm(ConfirmationFormType::class);
+          $form->handleRequest($request);
+   
+          if ($form->isSubmitted() && $form->isValid()) {
+              $manager->remove($itineraire);       
+              $manager->flush();     
+              
+              $this->addFlash('info', sprintf('L\'itineraire "%s" a bien été supprimé.', $itineraire->getNom()));
+              return $this->redirectToRoute('admin_itineraire');
+           }
+   
+          return $this->render('admin/dashboard/itineraire_delete.html.twig', [
+              'itineraire' => $itineraire,
+              'confirmation_form' => $form->createView(),
+          ]);
+      }
 
 
 

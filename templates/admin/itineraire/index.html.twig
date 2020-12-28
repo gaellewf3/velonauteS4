@@ -21,6 +21,9 @@
                
                  
             <tr> 
+             <a href="{{path('itineraire_add') }}" class="button is-info is-small">
+                        Nouvel itineraire
+                    </a>
       
                 <th>Région</th>
                 <th>Nom</th>
@@ -29,11 +32,7 @@
                 <th>Filename</th>
                 <th>Modifier</th>                
                 <th>Supprimer</th>                
-                <th>
-                    <a href="{{path('itineraire_add') }}" class="button is-info is-small">
-                        Nouvel itineraire
-                    </a>
-                </th>
+               
             </tr>           
             </thead>
             <tbody>
@@ -44,17 +43,17 @@
                             <td>{{ itineraire.nom }}</td>
                             <td>{{ itineraire.description|slice(0, 25) }}</td>
                             <td>{{ itineraire.informations|slice(0, 25) }}</td>
-                            <td>{{ itineraire.filename|slice(0, 25) }}</td>
-                     
+                            <td class="image is-128x128"><img src="{{ asset("/images/itineraire/" ~ itineraire.filename) }} "/></td>
+                            {# <td>{{ itineraire.filename|slice(0, 25) }}</td> #}
                             <td>
-                                <a href="#" class="button is-small is-success">
+                                {# <a href="#" class="button is-small is-success"> #}
                                 <a href="{{ path('itineraire_edit', {id: itineraire.id}) }}" class="button is-small is-success">
                                    <i class="fas fa-edit"></i>
                                 </a>
                             </td>  
 
                             <td>
-                                <a href="#" class="button is-small is-danger">
+                                <a href="{{ path('itineraire_delete', {id: itineraire.id}) }}" class="button is-small is-danger">
                                     <i class="fas fa-trash-alt"></i>
                                 </a>
                             </td>
