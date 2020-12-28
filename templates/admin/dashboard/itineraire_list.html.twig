@@ -1,4 +1,7 @@
-{% extends "admin/_template.html.twig" %}
+{# {% extends "admin/_template.html.twig" %} #}
+
+{% extends "admin/dashboard/index.html.twig" %}
+{# {% extends '_template.html.twig' %} #}
 
 {% block title %}
     itineraire
@@ -8,7 +11,7 @@
     <div class="section">
         <h1 class="title">Itineraire: {{ itineraire_list|length }}</h1>
 
-            {# {% include 'includes/flash.html.twig' %} #}
+            {% include 'includes/flash.html.twig' %}
 
         <table class="table is-fullwidth">
             <thead>
@@ -17,7 +20,7 @@
                 <th>Region</th>
                 <th>Nom</th>
                 <th>
-                    <a href="{{path ('admin_itineraire_add') }}" class="button is-info is-small">
+                    <a href="{{path ('itineraire_add') }}" class="button is-info is-small">
                         Nouvel itineraire
                     </a>
                 </th>
@@ -38,7 +41,7 @@
                         </a>
                     </td>
                 </tr> #}
-              {% endfor %}
+              {# {% endfor %} #}
             </tbody>
         </table>
     </div>

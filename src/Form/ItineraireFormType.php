@@ -4,10 +4,12 @@ namespace App\Form;
 
 use App\Entity\Itineraire;
 use Symfony\Component\Form\AbstractType;
+use Symfony\Component\Form\Extension\Core\Type\DateTimeType;
 use Symfony\Component\Form\Extension\Core\Type\TextType;
 use Symfony\Component\Form\Extension\Core\Type\FileType;
 use Symfony\Component\Form\FormBuilderInterface;
 use Symfony\Component\OptionsResolver\OptionsResolver;
+use Vich\UploaderBundle\Form\Type\VichImageType;
 
 class ItineraireFormType extends AbstractType
 
@@ -22,10 +24,17 @@ class ItineraireFormType extends AbstractType
             ->add('nom', TextType::class )
             ->add('description', TextType::class)
             ->add('informations', TextType::class)
-            ->add('imageFile', FileType::class, [
-                'required' => false
-            ])
-        ;
+            ->add('updated_at', DateTimeType::class)            
+            ->add('imageFile', VichImageType::class, [
+                'required' => false,
+                'allow_delete' => true,
+                'delete_label' => '...',
+                'download_label' => '...',
+                'download_uri' => true,
+                'image_uri' => true,
+                // 'imagine_pattern' => '...',
+                'asset_helper' => true,
+            ]);
     }
 
     public function configureOptions(OptionsResolver $resolver)

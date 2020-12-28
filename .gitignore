@@ -1,4 +1,6 @@
 
+/public/images/itineraire/*
+!/public/images/itineraire/.gitignore
 ###> symfony/framework-bundle ###
 /.env.local
 /.env.local.php
