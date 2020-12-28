@@ -18,8 +18,14 @@
                 <a class="navbar-item" href="{{ path('admin_dashboard') }}">
                     Accueil
                 </a>
-                <a class="navbar-item" href="{#{ path('admin_dashboard_itineraire_add') }#}">
+                   <a class="navbar-item" href="{{ path('admin_itineraire') }}"> 
                     Itinéraire
+                </a>
+                <a class="navbar-item" href="{{ path('admin_user') }}">
+                    Users
+                </a>
+                <a class="navbar-item" href="{{ path('admin_produit') }}">
+                    Produits
                 </a>
             </div>
             <div class="navbar-end">
@@ -36,6 +42,10 @@
             </div>
         </div>
     </nav>
+    {# <div>
+        <h3>Bonjour {{ app.user.pseudo }} !</h3>
+        <p>Bienvenue sur ton espace administrateur :)</p>
+    </div> #}
     {# Bloc qui contiendra le contenu de chaque page #}
     {% block content %}{% endblock %}
 {% endblock %}

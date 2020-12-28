@@ -22,20 +22,20 @@ class ItineraireRepository extends ServiceEntityRepository
     // /**
     //  * @return Itineraire[] Returns an array of Itineraire objects
     //  */
-    // public function findByExampleField($value)
-    // {
-    //     return $this->createQueryBuilder('i')
-    //         ->andWhere('i.exampleField = :val')
-    //         ->setParameter('val', $value)
-    //         ->orderBy('i.id', 'ASC')
-    //         ->setMaxResults(10)
-    //         ->getQuery()
-    //         ->getResult()
-    //     ;
-    // }
+    public function findByExampleField($value)
+    {
+        return $this->createQueryBuilder('i')
+            ->andWhere('i.exampleField = :val')
+            ->setParameter('val', $value)
+            ->orderBy('i.id', 'ASC')
+            ->setMaxResults(10)
+            ->getQuery()
+            ->getResult()
+        ;
+    }
     
 
-    /*
+     
     public function findOneBySomeField($value): ?Itineraire
     {
         return $this->createQueryBuilder('i')
@@ -45,5 +45,5 @@ class ItineraireRepository extends ServiceEntityRepository
             ->getOneOrNullResult()
         ;
     }
-    */
+     
 }

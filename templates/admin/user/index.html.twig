@@ -1,20 +1,51 @@
-{% extends 'base.html.twig' %}
+{% extends "admin/dashboard/index.html.twig" %}
 
-{% block title %}Hello UserController!{% endblock %}
+{% block title %}User{% endblock %}
 
-{% block body %}
-<style>
-    .example-wrapper { margin: 1em auto; max-width: 800px; width: 95%; font: 18px/1.5 sans-serif; }
-    .example-wrapper code { background: #F5F5F5; padding: 2px 6px; }
-</style>
+{% block content %}
+    <div class="section">
+        <h1 class="title">Membres: {{ user_list|length }}</h1>
 
-<div class="example-wrapper">
-    <h1>Hello {{ controller_name }}! ✅</h1>
+        {% include "includes/flash.html.twig" %}
 
-    This friendly message is coming from:
-    <ul>
-        <li>Your controller at <code><a href="{{ 'C:/Users/WEBFORCE3/Documents/webforce_cours/SYMFONY/velonauteS4/src/Controller/Admin/UserController.php'|file_link(0) }}">src/Controller/Admin/UserController.php</a></code></li>
-        <li>Your template at <code><a href="{{ 'C:/Users/WEBFORCE3/Documents/webforce_cours/SYMFONY/velonauteS4/templates/admin/user/index.html.twig'|file_link(0) }}">templates/admin/user/index.html.twig</a></code></li>
-    </ul>
-</div>
+        <table class="table is-fullwidth">
+            <thead>
+                <tr>
+                    <th>Nom</th>
+                    <th>Prenom</th>
+                    <th>Pseudo</th>
+                    <th>Email</th>
+                    <th>Adresse</th>
+                    <th>Ville</th>
+                    <th>Code Postale</th>
+                    <th>Modifier</th>
+                    <th>Supprimer</th>
+
+                </tr>
+            </thead>
+            <tbody>
+                {% for user in user_list %}
+                    <tr>
+                        <td>{{ user.nom }}</td>
+                        <td>{{ user.prenom }}</td>
+                        <td>{{ user.pseudo }}</td>
+                        <td>{{ user.email }}</td>
+                        <td>{{ user.adresse }}</td>
+                        <td>{{ user.ville }}</td>
+                        <td>{{ user.cp }}</td>
+                        <td>
+                            <a href="{{ path('user_edit', {id: user.id}) }}" class="button is-small is-success">
+                                <i class="fas fa-edit"></i>
+                            </a>
+                        </td>
+                        <td>
+                            <a href="{{ path('user_delete', {id: user.id }) }}" class="button is-small is-danger">
+                                <i class="fas fa-trash-alt"></i>
+                            </a>
+                        </td>
+                    </tr>
+                {% endfor %}
+            </tbody>
+        </table>
+    </div>
 {% endblock %}
