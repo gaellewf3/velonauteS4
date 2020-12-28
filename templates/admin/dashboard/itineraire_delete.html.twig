@@ -1,0 +1,27 @@
+{% extends "admin/dashboard/index.html.twig" %}
+
+{# {% extends '_template.html.twig' %} #}
+
+{% block title %}
+   Suppression de - {{ itineraire.nom }}  
+{% endblock %}
+
+
+{% block content %}
+    <div class="section">
+        <h1 class="title">Suppression de l'itineraire  {{ itineraire.nom }}</h1>
+
+        {{ form_start(confirmation_form) }}
+
+                {{ form_row(confirmation_form.confirmation, {
+                    label: 'je confirme la suppression de l\'itineraire ' ~ itineraire.nom ~ ' et de ses informations ).'
+
+                })  }}
+
+                <button type="submit" class="button is-danger is-fullwidth">
+                supprimer
+                </button>
+
+        {{ form_end(confirmation_form)  }}
+    </div>
+    {% endblock %}

@@ -1,0 +1,21 @@
+{{ form_start(user_form) }}
+
+    {# Affichage d'un champ de formulaire complet (label, erreurs, input, message d'aide) #}
+    {{ form_row(user_form.nom, {label: 'Nom:'}) }}
+
+    {{ form_row(user_form.prenom, {label: 'Prenom:'}) }}
+
+    {{ form_row(user_form.pseudo, {label: 'Pseudo:'}) }}
+
+    {{ form_row(user_form.email, {label: 'Email:'}) }}
+
+    {{ form_row(user_form.adresse, {label: 'Adresse:'}) }}
+
+    {{ form_row(user_form.ville, {label: 'Ville:'}) }}
+
+    {{ form_row(user_form.cp, {label: 'Code Postale:'}) }}
+
+    <button type="submit" class="button is-primary is-fullwidth">
+        Enregistrer
+    </button>
+{{ form_end(user_form) }}

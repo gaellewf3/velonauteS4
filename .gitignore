@@ -1,4 +1,6 @@
 
+/public/images/itineraire/*
+!/public/images/itineraire/.gitignore
 ###> symfony/framework-bundle ###
 /.env.local
 /.env.local.php
@@ -15,3 +17,4 @@
 npm-debug.log
 yarn-error.log
 ###< symfony/webpack-encore-bundle ###
+/public/images
