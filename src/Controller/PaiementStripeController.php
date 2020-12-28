@@ -61,6 +61,15 @@ class PaiementStripeController extends AbstractController
             $this->addFlash('success', 'Le paiement a ete effectue');
             return $this->redirectToRoute('paiement_stripe');
         }
+        
+        else if ($request->getMethod() == 'GET') {
+            $total = $request->query->get('total');
+
+            return $this->render('paiement_stripe/index.html.twig', [
+                'controller_name' => 'PaiementStripeController',
+                'total' => $total
+            ]);
+        }
 
         return $this->render('paiement_stripe/index.html.twig', [
             'controller_name' => 'PaiementStripeController'
