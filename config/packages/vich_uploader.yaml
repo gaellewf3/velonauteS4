@@ -1,13 +1,13 @@
 vich_uploader:
     db_driver: orm
 
-    # mappings:
-    #    itineraire_image:
-    #        uri_prefix: /images/itineraire
-    #        upload_destination: '%kernel.project_dir%/public/images/itineraire'
-    #        namer: Vich\UploaderBundle\Naming\UniqidNamer
-
     mappings:
+        itineraire_image:
+           uri_prefix: /images/itineraire
+           upload_destination: '%kernel.project_dir%/public/images/itineraire'
+           namer: Vich\UploaderBundle\Naming\UniqidNamer
+
+    # mappings:
         product_image:
             uri_prefix: /images/products
             upload_destination: '%kernel.project_dir%/public/images/products'

@@ -61,7 +61,7 @@ class DashboardController extends AbstractController
 
 
      /** AJOUTER un itineraire
-     * @Route("/itineraire/new", name="itineraire_add")
+     * @Route("/admin/itineraire/new", name="itineraire_add")
      */
 
     public function itineraireAdd(Request $request, EntityManagerInterface $manager) 
@@ -98,7 +98,7 @@ class DashboardController extends AbstractController
     /**
      * 
      * Modification d'un itineraire
-     * @Route("/itineraire/{id}/edit", name="itineraire_edit")
+     * @Route("/admin/itineraire/{id}/edit", name="itineraire_edit")
      */
     public function itineraireEdit(Itineraire $itineraire, Request $request, EntityManagerInterface $manager)
   
@@ -125,7 +125,7 @@ class DashboardController extends AbstractController
 
         /**
         * supprimer itineraire
-     * @Route("/itineraire/{id}/delete", name="itineraire_delete")
+     * @Route("/admin/itineraire/{id}/delete", name="itineraire_delete")
        */
       public function itineraireDelete(Itineraire $itineraire, Request $request, 
       EntityManagerInterface $manager)
