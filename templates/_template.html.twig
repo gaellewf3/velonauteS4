@@ -26,11 +26,18 @@
                 <a class="navbar-item" href="{{ path('thematiques') }}">
                     Thématiques
                 </a>
+
+                <a class="navbar-item" href="{{ path('reservation') }}">
+                    Réservation
+                </a>
             </div>
 
             <div class="navbar-end">
                 <div class="navbar-item">
                     <div class="buttons">
+                        <a class="button is-success is-light is-small" href="{{ path('cart_index') }}" title="Panier">
+                                <i class="fas fa-shopping-cart"></i>
+                            </a>  
                         {% if app.user %}
                             <a class="button is-success is-light is-small" href="#">
                                 <strong>{{ app.user.pseudo }}</strong>
