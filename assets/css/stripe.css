@@ -9,7 +9,7 @@
   
     padding: 10px 12px;
   
-    border: 1px solid transparent;
+    border: 1px solid ;
     border-radius: 4px;
     background-color: white;
   
@@ -27,4 +27,32 @@
   }
   
   .StripeElement--webkit-autofill {
-    background-color: #fefde5 !important;}
+    background-color: #fefde5 !important;
+}
+
+
+.btn.btn-success.mt-4 {
+        border: 0.5px white;
+        color: white;
+        padding: 10px;
+        background-color: #28da84;
+        margin: auto;
+ }
+    
+div.section {
+    display: flex;
+    width: 900px;
+}
+
+div.section div {
+flex:1;
+}
+
+form#payment-form{
+    flex:1;
+    margin-left:10px
+}
+
+/* #card-element{
+    width: 50%;
+} */

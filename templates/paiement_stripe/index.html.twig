@@ -2,6 +2,11 @@
 
 {% block content %}
 	<div class="section">
+
+		<div>
+			<img src="{{ asset('build/images/paiement/pexels-dorothy-castillo-2270328.jpg') }}" alt="cycliste à la montagne" class="imagePaiement">
+		</div>
+
 		<form action="/paiement/stripe" method="post" id="payment-form">
 
 			<div class="form-row">
