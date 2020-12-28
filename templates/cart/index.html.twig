@@ -41,7 +41,7 @@
                     <td>{{ total }}</td>
                     <td>
                         {% if is_granted('ROLE_USER') %}
-                            <button type="submit" class="button is-success">Acheter</button>
+                            <a href="{{ path('paiement_stripe') }}"><button type="submit" class="button is-success">Acheter</button></a>
                         {% else %}
                             <a href="{{ path('app_login') }}" class="button is-link"> Connectez-vous </a>
                         {% endif %}
