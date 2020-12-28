@@ -40,7 +40,11 @@
                     <td colspan="3" class="has-text-right">Total : </td>
                     <td>{{ total }}</td>
                     <td>
-                        <button type="submit" class="button is-success">Acheter</button>
+                        {% if is_granted('ROLE_USER') %}
+                            <button type="submit" class="button is-success">Acheter</button>
+                        {% else %}
+                            <a href="{{ path('app_login') }}" class="button is-link"> Connectez-vous </a>
+                        {% endif %}
                     </td>
                 </tr>
             </tfoot>

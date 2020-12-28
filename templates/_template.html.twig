@@ -36,11 +36,10 @@
             <div class="navbar-end">
                 <div class="navbar-item">
                     <div class="buttons">
-                        
-                        {% if app.user %}
-                            <a class="button is-success is-light is-small" href="{{ path('cart_index') }}" title="Panier">
+                        <a class="button is-success is-light is-small" href="{{ path('cart_index') }}" title="Panier">
                                 <i class="fas fa-shopping-cart"></i>
-                            </a>
+                            </a>  
+                        {% if app.user %}
                             <a class="button is-success is-light is-small" href="#">
                                 <strong>{{ app.user.pseudo }}</strong>
                             </a>

@@ -10,12 +10,15 @@
 
         <div class="columns is-multiline is-mobile">
             {% for produit in produit_list %}
-                <div class="column is-one-quarter box">
+                <div class="column is-one-quarter card">
                     <h2>
                         {{ produit.categorie }}
                     </h2>
-                    <div class="card-content">
-                        <img class="image is-128x128" src=" {{ asset("/images/products/" ~ produit.imageName) }} "/>
+                    <div class="card-image">
+                        <figure class="image is-4by3">
+                            <img src=" {{ asset("/images/products/" ~ produit.imageName) }} "/>
+                        </figure>
+                        
                     </div>
                     <p class="has-text-centered">
                         {{ produit.nom }}
