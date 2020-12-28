@@ -1,0 +1,35 @@
+{% extends "_template.html.twig" %}
+
+{% block content %}
+	<div class="section">
+
+		<div>
+			<img src="{{ asset('build/images/paiement/pexels-dorothy-castillo-2270328.jpg') }}" alt="cycliste à la montagne" class="imagePaiement">
+		</div>
+
+		<form action="/paiement/stripe" method="post" id="payment-form">
+
+			<div class="form-row">
+
+				<input type="text" name="prenom" class="form-control mb-3 StripeElement StripeElement--empty" placeholder="Prénom">
+				<input type="text" name="nom" class="form-control mb-3 StripeElement StripeElement--empty" placeholder="Nom">
+				<input type="email" name="email" class="form-control mb-3 StripeElement StripeElement--empty" placeholder="Email">
+
+				<div
+					id="card-element" class="form-control"><!-- A Stripe Element will be inserted here. -->
+				</div>
+
+				<!-- Used to display Element errors. -->
+				<div id="card-errors" role="alert"></div>
+
+				<button>Valider le paiement</button>
+
+			</div>
+		</form>
+
+	</div>
+
+	{% include "footer.html.twig" %}
+	<script src="https://js.stripe.com/v3/"></script>
+	{{ encore_entry_script_tags('charge') }}
+{% endblock %}
