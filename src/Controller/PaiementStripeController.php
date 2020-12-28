@@ -22,12 +22,18 @@ class PaiementStripeController extends AbstractController
      */
     public function index(Request $request, EntityManagerInterface $manager): Response
     {
-        if ($request->getMethod() == 'POST') {
+        $total = 0;
+
+        if($request->getMethod() == 'GET') {
+            $total = $request->query->get('total');
+        }
+        elseif ($request->getMethod() == 'POST') {
+        
             $prenom = $request->request->get('prenom');
             $nom = $request->request->get('nom');
             $email = $request->request->get('email');
             $token = $request->request->get('stripeToken');
-            $total = $request->request->get('total');
+            $total = $request->request->get('total')*100;
 
 
             // Create Customer In Stripe
@@ -63,7 +69,9 @@ class PaiementStripeController extends AbstractController
         }
 
         return $this->render('paiement_stripe/index.html.twig', [
-            'controller_name' => 'PaiementStripeController'
+            'controller_name' => 'PaiementStripeController',
+            'total'=> $total
+
         ]);
     }
 }

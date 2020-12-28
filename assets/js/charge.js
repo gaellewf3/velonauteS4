@@ -68,11 +68,11 @@ function stripeTokenHandler(token) {
     form.appendChild(hiddenInput);
 
 
-    var hiddenInputTotal = document.createElement('input');
-    hiddenInputTotal.setAttribute('type', 'hidden');
-    hiddenInputTotal.setAttribute('name', 'total');
-    hiddenInputTotal.setAttribute('value', getTotal());
-    form.appendChild(hiddenInputTotal);
+    // var hiddenInputTotal = document.createElement('input');
+    // hiddenInputTotal.setAttribute('type', 'hidden');
+    // hiddenInputTotal.setAttribute('name', 'total');
+    // hiddenInputTotal.setAttribute('value', getTotal());
+    // form.appendChild(hiddenInputTotal);
 
 
     // Submit the form
@@ -87,4 +87,4 @@ function getTotal() {
     
     return l[1]
 }
-document.getElementById('totalVelonaute').innerHTML = "Montant total: " + getTotal() + " euros"
+// document.getElementById('totalVelonaute').innerHTML = "Montant total: " + getTotal() + " euros"
