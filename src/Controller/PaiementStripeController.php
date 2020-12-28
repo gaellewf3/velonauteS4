@@ -64,8 +64,8 @@ class PaiementStripeController extends AbstractController
             $manager->flush();
 
             // Ajout d'un message flash
-            $this->addFlash('success', 'Le paiement a ete effectue');
-            return $this->redirectToRoute('paiement_stripe');
+            $this->addFlash('success', 'Le paiement a été effectué');
+            return $this->redirectToRoute('success_page');
         }
         
         else if ($request->getMethod() == 'GET') {
