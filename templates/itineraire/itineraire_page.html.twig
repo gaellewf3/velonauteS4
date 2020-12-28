@@ -1,34 +1,32 @@
+{% extends "_template.html.twig" %}
+{# {% extends "index.html.twig" %} #}
 
-{% extends "index.html.twig" %}
+{% block title %} #}
+    {{ itineraire.nom }}
+{% endblock %}
 
-    {% block content %}
+{% block content %}
 
 	<section class="container" id="itineraire">
 
 		<div id="photo__savoie">
-
 			   
 			   	<p>{{ itineraire.region }}</p>
 
 		{# <div src="{{ asset('uploads/' ~ article.image) }} </div> #}
 
 
-			{# <!--------------------- coeur -------------------> #}
-			<span class="coeur">
-				<i class="fas fa-heart" id="coeur"></i>
-			</span>
-			{# <!--------------------- coeur -------------------> #}
+        {# <!--------------------- coeur -------------------> #}
+        <span class="coeur">
+            <i class="fas fa-heart" id="coeur"></i>
+        </span>
+        {# <!--------------------- coeur -------------------> #}
 		</div>
-
- 
-	
-		 
 
 		<article>
 			<h4>{{ itineraire.nom }}</h4>
 
-		            <p>{{ itineraire.description }}</p>
-
+		        <p>{{ itineraire.description }}</p>
 
 				<div>
 					<div class="partageRS">
@@ -95,4 +93,8 @@
 		</figure>
 	</section>
 
-        {% endblock %}
+{% block javascripts %}
+    {{ encore_entry_script_tags('itineraire') }}
+{% endblock %}
+
+{% endblock %}

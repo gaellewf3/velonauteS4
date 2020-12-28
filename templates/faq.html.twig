@@ -1,7 +1,6 @@
-{% extends "base.html.twig" %}
+{% extends "_template.html.twig" %}
 
-
-    {% block body %}
+{% block content %}
     {# <!------------------------- FAQ --------------------------------> #}
     <div id="containerFAQ">
         <h2>Foire Aux Questions</h2>
@@ -147,8 +146,10 @@
         </div>
     </div>
 
+    {% block javascripts %}
+        {{ encore_entry_script_tags('faq') }}
     {% endblock %}
+{% endblock %}
 
-{# <!--------------- Footer --------------------> #}
 
-{% extends "footer.html.twig" %}
+

@@ -1,0 +1,40 @@
+{% extends "_template.html.twig" %}
+
+{% block title %}Produits{% endblock %}
+
+{% block content %}
+    <div class="section">
+        <h1 class="title">Produits: {{ produit_list|length }}</h1>
+
+        {% include "includes/flash.html.twig" %}
+
+        <div class="columns is-multiline is-mobile">
+            {% for produit in produit_list %}
+                <div class="column is-one-quarter card">
+                    <h2>
+                        {{ produit.categorie }}
+                    </h2>
+                    <div class="card-image">
+                        <figure class="image is-4by3">
+                            <img src=" {{ asset("/images/products/" ~ produit.imageName) }} "/>
+                        </figure>
+                        
+                    </div>
+                    <p class="has-text-centered">
+                        {{ produit.nom }}
+                        <br>
+                        {{ produit.description }}
+                    </p>
+                    <h3 class="has-text-weight-semibold has-text-black">
+                        {{ produit.prix }} € / jour
+                    </h3>
+                    <a href="{{ path('cart_add', {id: produit.id}) }}" class="button is-small is-success is-pulled-right"><i class="fas fa-shopping-cart mr-1"></i>
+                        Ajouter
+                    </a>
+                </div>   
+            {% endfor %}
+        <div>
+    </div>
+
+{% endblock %}
+

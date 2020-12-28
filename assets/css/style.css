@@ -215,7 +215,7 @@ header nav a:hover {
     background-repeat: no-repeat;
     background-size: cover; 
     background-attachment: fixed;
-    margin: 70px 0 0 0;
+    margin: auto;
     position: relative;
 }
 
@@ -1603,7 +1603,6 @@ aside{
     width: 400px;
     height: 300px;
     border-radius: 5px;
-    margin: 20px 0;
 }
 
 .formulairePaiement {

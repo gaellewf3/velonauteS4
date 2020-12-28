@@ -1,0 +1,59 @@
+{% extends '_template.html.twig' %}
+
+{% block title %}Panier{% endblock %}
+
+{% block content %}
+
+    {% include "includes/flash.html.twig" %}
+
+    {% if items | length > 0 %}
+    <div class="columns is-centered section">
+        <table class="table is-hoverable is-fullwidth">
+            <thead>
+                <tr>
+                    <th></th>
+                    <th>Produit</th>
+                    <th>Prix</th>
+                    <th>Quantité</th>
+                    <th>Total</th>
+                    <th></th>
+                </tr>
+            </thead>
+            <tbody>
+                {% for item in items %}
+                    <tr>
+                        <td>
+                            <img class="image is-48x48" src=" {{ asset("/images/products/" ~ item.product.imageName) }} "/>
+                        </td>
+                        <td>{{ item.product.nom }}</td>
+                        <td>{{ item.product.prix }}</td>
+                        <td>{{ item.quantity }}</td>
+                        <td>{{ item.product.prix * item.quantity }}</td>
+                        <td>
+                            <a href="{{ path('cart_delete', {id: item.product.id}) }}" class="button is-danger is-small"><i class="fas fa-trash"></i></a>
+                        </td>
+                    </tr>
+                {% endfor %}
+            </tbody>
+            <tfoot>
+                <tr>
+                    <td colspan="3" class="has-text-right">Total : </td>
+                    <td>{{ total }}</td>
+                    <td>
+                        {% if is_granted('ROLE_USER') %}
+                            <button type="submit" class="button is-success">Acheter</button>
+                        {% else %}
+                            <a href="{{ path('app_login') }}" class="button is-link"> Connectez-vous </a>
+                        {% endif %}
+                    </td>
+                </tr>
+            </tfoot>
+        </table>
+        
+
+    </div>
+    {% else %}
+        <p class="has-text-centered">Votre panier est vide</p>
+    {% endif %}
+
+{% endblock %}
