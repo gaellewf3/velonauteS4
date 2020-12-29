@@ -1,7 +1,4 @@
-{# {% extends "admin/index.html.twig" %} #}
 {% extends "admin/dashboard/index.html.twig" %}
-
-{# {% extends '_template.html.twig' %} #}
 
 
 {% block title %}
@@ -9,7 +6,7 @@
 {% endblock %}
 
 {% block content %}
-    <div class="section">
+    <section class="section">
         <h1 class="title">Nouvel itinéraire</h1>
 
                   {{ form_start(itineraire_form) }}
@@ -27,7 +24,7 @@
                 {{ form_end(itineraire_form) }}
 
         {% include "admin/dashboard/_itineraire_form.html.twig" %}
-    </div>
+    </section>
 {% endblock %}
 
 

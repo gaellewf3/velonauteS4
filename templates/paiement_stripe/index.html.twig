@@ -1,8 +1,8 @@
 {% extends "_template.html.twig" %}
 
 {% block content %}
-	<div class="section">
-
+	<section class="section">
+	     
 		<div>
 			<img src="{{ asset('build/images/paiement/pexels-dorothy-castillo-2270328.jpg') }}" alt="cycliste à la montagne" class="imagePaiement">
 		</div>
@@ -26,8 +26,8 @@
 			</div>
 		</form>
 
-	</div>
-	<span id="totalVelonaute">Montant total......{{total}}€</span>
+	</section>
+	<span id="totalVelonaute">Montant total : {{total}} euros</span>
 
 
 	<script src="https://js.stripe.com/v3/"></script>

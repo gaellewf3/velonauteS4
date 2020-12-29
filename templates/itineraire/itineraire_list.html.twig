@@ -5,37 +5,39 @@
 {% endblock %}
 
 {% block content %}
-    <div class="section">
-        <h1 class="title">Itinéraires: {{ itineraire_list|length }}</h1>
+    <section class="section">
+        <div class="container">
+            <h1 class="title">Itinéraires: {{ itineraire_list|length }}</h1>
 
-        <div class="columns is-multiline">
-            {% for itineraire in itineraire_list %}
-                <div class="column is-one-third">
-                    <div class="box">
-                        <article class="media">
-                            <div class="media-left">
-                                <figure class="image is-128x128">
-                                    <img src="https://loremflickr.com/256/256/landscape/all?lock={{ itineraire.id }}" alt="Image">
-                                </figure>
-                            </div>
-                            <div class="media-content">
-                                <div class="content">
-                                    <p>
-                                        <a href="{{ path('itineraire', {id: itineraire.id}) }}" class="has-text-primary">
-                                            <strong>{{ itineraire.nom }}</strong>
-                                        </a>
-                                        <br>
-                                        {# https://twig.symfony.com/doc/3.x/filters/slice.html 
-                                        On affiche uniquement les 80 premiers caractères de la description#}
-                                        {{ itineraire.description|slice(0, 80) }}
-                                    </p>
+            <div class="columns is-multiline">
+                {% for itineraire in itineraire_list %}
+                    <div class="column is-one-third">
+                        <div class="box">
+                            <article class="media">
+                                <div class="media-left">
+                                    <figure class="image is-128x128">
+                                        <img src="https://loremflickr.com/256/256/landscape/all?lock={{ itineraire.id }}" alt="Image">
+                                    </figure>
                                 </div>
-                            </div>
-                        </article>
+                                <div class="media-content">
+                                    <div class="content">
+                                        <p>
+                                            <a href="{{ path('itineraire', {id: itineraire.id}) }}" class="has-text-primary">
+                                                <strong>{{ itineraire.nom }}</strong>
+                                            </a>
+                                            <br>
+                                            {# https://twig.symfony.com/doc/3.x/filters/slice.html 
+                                            On affiche uniquement les 80 premiers caractères de la description#}
+                                            {{ itineraire.description|slice(0, 80) }}
+                                        </p>
+                                    </div>
+                                </div>
+                            </article>
+                        </div>
                     </div>
-                </div>
-            {% endfor %}
+                {% endfor %}
+            </div>
         </div>
-    </div>
+    </section>
 {% endblock %}
 

@@ -5,45 +5,49 @@
 {% endblock %}
 
 {% block content %}
-    <div class="columns is-centered section">
-        <div class="column is-one-third box">
-            <h1 class="title has-text-success has-text-centered">Connexion</h1>
+    <section class="section">
+        <div class="container is-fullheight-with-menu">
+            <div class="columns is-centered">
+                <div class="column box is-half-tablet is-full-mobile">
+                    <h1 class="title has-text-success has-text-centered">Connexion</h1>
 
-            {# si l'utilisateur est déjà connecté #}
-            {% if app.user %}
-                <div class="notification is-info">
-                    Vous êtes connecté en tant que {{ app.user.username }}, <a href="{{ path('app_logout') }}">Déconnexion</a>
+                    {# si l'utilisateur est déjà connecté #}
+                    {% if app.user %}
+                        <div class="notification is-info">
+                            Vous êtes connecté en tant que {{ app.user.username }}, <a href="{{ path('app_logout') }}">Déconnexion</a>
+                        </div>
+                    {% endif %}
+
+                    {# si une erreur survient #}
+                    {% if error %}
+                        <div class="notification is-danger">{{ error.messageKey|trans(error.messageData, 'security') }}</div>
+                    {% endif %}
+
+                    {# formulaire de connexion #}
+                    <form method="post">
+                        <div class="field">
+                            <label class="label" for="inputEmail">Email ou pseudo</label>
+                            <div class="control">
+                                <input class="input" type="text" value="{{ last_username }}" name="username" id="inputEmail" required autofocus>
+                            </div>
+                        </div>
+
+                        <div class="field">
+                            <label class="label" for="inputPassword">Mot de passe</label>
+                            <div class="control">
+                                <input class="input" type="password" name="password" id="inputPassword" required>
+                            </div>
+                        </div>
+
+                        {# un champ caché pour la protection des failles CSRF #}
+                        <input type="hidden" name="_csrf_token" value="{{ csrf_token('authenticate') }}">
+                        <button class="button is-success is-fullwidth" type="submit">
+                            Connexion
+                        </button>
+                    </form>
                 </div>
-            {% endif %}
-
-            {# si une erreur survient #}
-            {% if error %}
-                <div class="notification is-danger">{{ error.messageKey|trans(error.messageData, 'security') }}</div>
-            {% endif %}
-
-            {# formulaire de connexion #}
-            <form method="post">
-                <div class="field">
-                    <label class="label" for="inputEmail">Email ou pseudo</label>
-                    <div class="control">
-                        <input class="input" type="text" value="{{ last_username }}" name="username" id="inputEmail" required autofocus>
-                    </div>
-                </div>
-
-                <div class="field">
-                    <label class="label" for="inputPassword">Mot de passe</label>
-                    <div class="control">
-                        <input class="input" type="password" name="password" id="inputPassword" required>
-                    </div>
-                </div>
-
-                {# un champ caché pour la protection des failles CSRF #}
-                <input type="hidden" name="_csrf_token" value="{{ csrf_token('authenticate') }}">
-                <button class="button is-success is-fullwidth" type="submit">
-                    Connexion
-                </button>
-            </form>
+            </div>
         </div>
-    </div>
+    </section>
 
 {% endblock %}
