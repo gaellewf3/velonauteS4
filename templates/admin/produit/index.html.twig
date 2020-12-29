@@ -3,51 +3,53 @@
 {% block title %}Produits{% endblock %}
 
 {% block content %}
-    <div class="section">
-        <h1 class="title">Produits: {{ produit_list|length }}</h1>
+    <section class="section">
+        <div class="container">
+            <h1 class="title">Produits: {{ produit_list|length }}</h1>
 
-        {% include "includes/flash.html.twig" %}
+            {% include "includes/flash.html.twig" %}
 
-        <table class="table is-fullwidth">
-            <thead>
-                <tr>
-                    <th>
-                        <a href="{{ path('produit_add') }}" class="button is-info is-small">
-                            Ajoute Nouvel produit
-                        </a>
-                    </th>
-                </tr>
-                <tr>
-                    <th>Categorie</th>
-                    <th>Nom</th>
-                    <th>Prix</th>
-                    <th>Description</th>
-                    <th>Image</th>
-                    <th>Modifier</th>
-                    <th>Supprimer</th>
-                </tr>
-            </thead>
-            <tbody>
-                {% for produit in produit_list %}
+            <table class="table is-fullwidth">
+                <thead>
                     <tr>
-                        <td>{{ produit.categorie }}</td>
-                        <td>{{ produit.nom }}</td>
-                        <td>{{ produit.prix }}</td>
-                        <td>{{ produit.description }}</td>
-                        <td class="image is-128x128" title="image"><img src=" {{ asset("/images/products/" ~ produit.imageName) }} "/></td>
-                        <td>
-                            <a href="{{ path('produit_edit', {id: produit.id}) }}" class="button is-small is-success">
-                                <i class="fas fa-edit"></i>
+                        <th>
+                            <a href="{{ path('produit_add') }}" class="button is-info is-small">
+                                Ajoute Nouvel produit
                             </a>
-                        </td>
-                        <td>
-                            <a href="{{ path('produit_delete', {id: produit.id}) }}" class="button is-small is-danger">
-                                <i class="fas fa-trash-alt"></i>
-                            </a>
-                        </td>
+                        </th>
                     </tr>
-                {% endfor %}
-            </tbody>
-        </table>
-    </div>
+                    <tr>
+                        <th>Categorie</th>
+                        <th>Nom</th>
+                        <th>Prix</th>
+                        <th>Description</th>
+                        <th>Image</th>
+                        <th>Modifier</th>
+                        <th>Supprimer</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    {% for produit in produit_list %}
+                        <tr>
+                            <td>{{ produit.categorie }}</td>
+                            <td>{{ produit.nom }}</td>
+                            <td>{{ produit.prix }}</td>
+                            <td>{{ produit.description }}</td>
+                            <td class="image is-128x128" title="image"><img src=" {{ asset("/images/products/" ~ produit.imageName) }} "/></td>
+                            <td>
+                                <a href="{{ path('produit_edit', {id: produit.id}) }}" class="button is-small is-success">
+                                    <i class="fas fa-edit"></i>
+                                </a>
+                            </td>
+                            <td>
+                                <a href="{{ path('produit_delete', {id: produit.id}) }}" class="button is-small is-danger">
+                                    <i class="fas fa-trash-alt"></i>
+                                </a>
+                            </td>
+                        </tr>
+                    {% endfor %}
+                </tbody>
+            </table>
+        </div>
+    </section>
 {% endblock %}
