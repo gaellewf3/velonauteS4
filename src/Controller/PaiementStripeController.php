@@ -22,12 +22,18 @@ class PaiementStripeController extends AbstractController
      */
     public function index(Request $request, EntityManagerInterface $manager): Response
     {
-        if ($request->getMethod() == 'POST') {
+        $total = 0;
+
+        if($request->getMethod() == 'GET') {
+            $total = $request->query->get('total');
+        }
+        elseif ($request->getMethod() == 'POST') {
+        
             $prenom = $request->request->get('prenom');
             $nom = $request->request->get('nom');
             $email = $request->request->get('email');
             $token = $request->request->get('stripeToken');
-            $total = $request->request->get('total');
+            $total = $request->request->get('total')*100;
 
 
             // Create Customer In Stripe
@@ -58,12 +64,23 @@ class PaiementStripeController extends AbstractController
             $manager->flush();
 
             // Ajout d'un message flash
-            $this->addFlash('success', 'Le paiement a ete effectue');
-            return $this->redirectToRoute('paiement_stripe');
+            $this->addFlash('success', 'Le paiement a été effectué');
+            return $this->redirectToRoute('success_page');
+        }
+        
+        else if ($request->getMethod() == 'GET') {
+            $total = $request->query->get('total');
+
+            return $this->render('paiement_stripe/index.html.twig', [
+                'controller_name' => 'PaiementStripeController',
+                'total' => $total
+            ]);
         }
 
         return $this->render('paiement_stripe/index.html.twig', [
-            'controller_name' => 'PaiementStripeController'
+            'controller_name' => 'PaiementStripeController',
+            'total'=> $total
+
         ]);
     }
 }

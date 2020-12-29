@@ -1729,6 +1729,11 @@ hr {
     margin-top: 150px;
     margin-bottom: 80px;
 }
+#success_page{
+    font-size: 25px;
+    margin: 150px 150px;
+}
+
 @media screen and (max-width:920px) {
  #container {
      display: block;
@@ -1782,6 +1787,8 @@ hr {
  }
 
  }
+
+
 
 
 /**************************************************** PAGE FAQ ***********************************************************/
